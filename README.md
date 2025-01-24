@@ -16,3 +16,29 @@ int *ptr = arr;
 int aadhar[10];
 int *ptr = &aadhar[0];
 ptr++;
+
+#include <stdio.h>
+
+int main() {
+    int aadhar[5];
+    int *ptr = &aadhar[0]; // Pointer pointing to the first element of the array
+
+    // Input loop
+    for (int i = 0; i < 5; i++) {
+        printf("%d index: ", i);
+        scanf("%d", &aadhar[i]);
+    }
+
+    // Output loop
+    for (int i = 0; i < 5; i++) {
+        printf("%d index = %d\n", i, aadhar[i]);
+    }
+
+    return 0;
+}
+
+0 index: 101
+1 index: 102
+2 index: 103
+3 index: 104
+4 index: 105
