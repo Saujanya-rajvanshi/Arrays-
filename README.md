@@ -42,3 +42,8 @@ int main() {
 2 index: 103
 3 index: 104
 4 index: 105
+
+reverse an array 
+n-i-1
+
+
