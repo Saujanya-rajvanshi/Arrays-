@@ -4,7 +4,7 @@ Array basic
 <br>
 initialisation 
 <br>
-int a[];
+int a[ ];
 <br>
 
 
