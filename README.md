@@ -33,6 +33,12 @@ int main()
     rev(ar);
     display(ar);
     
+    int n;
+    printf("what element dou you want to search");
+    scanf("%d",&n);
+    search(ar,n);
+
+    
     return 0;
 }
 
