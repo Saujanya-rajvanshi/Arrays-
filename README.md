@@ -42,6 +42,14 @@ int main()
     return 0;
 }
 
+void insert(int *ar, int p,int n){
+    for(int i = MAX-1;i>p;i--){
+        ar[i]=ar[i-1];
+    }
+    ar[p]=n;
+}
+
+
 ```
 
 
