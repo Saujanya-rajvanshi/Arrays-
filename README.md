@@ -21,7 +21,17 @@ int main()
     int ar(ar,3,14);
     int ar(ar,4,15)
     
-    printf()
+    printf("array after insertion :\n");
+    display(ar);
+    
+    printf("array after deletion :\n");
+    del(ar);
+    display (ar);
+    insert(ar,2,13);
+    
+    printf("array after reverse :\n");
+    rev(ar);
+    display(ar);
     
     return 0;
 }
