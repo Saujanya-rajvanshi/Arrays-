@@ -10,6 +10,22 @@ void display(int *ar);
 void rev(int *ar);
 void del(int *ar,int p)
 void search(int *ar,int n);
+
+int main()
+{
+    int ar[MAX]={0};
+    
+    int ar(ar,0,11);
+    int ar(ar,1,12);
+    int ar(ar,2,13);
+    int ar(ar,3,14);
+    int ar(ar,4,15)
+    
+    printf()
+    
+    return 0;
+}
+
 ```
 
 
