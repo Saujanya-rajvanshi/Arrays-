@@ -1,6 +1,18 @@
 # Arrays-
 Array basic 
 
+```c
+#include <stdio.h>
+#define MAX 5
+
+void insert(int *ar, int p, int n);
+void display(int *ar);
+void rev(int *ar);
+void del(int *ar,int p)
+void search(int *ar,int n);
+```
+
+
 --- 
 <br>
 initialisation 
