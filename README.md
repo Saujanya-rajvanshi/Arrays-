@@ -57,6 +57,16 @@ void rev(int *ar){
     }
 }
 
+void search(int *ar,int n){
+    for(int i =0;i< Max;i++){
+        if(ar[i]==n){
+            printf("element %d found at position %d\n",n,i+1);
+            return;
+        }
+    printf("element %d not found");
+    }
+}
+
 
 ```
 
