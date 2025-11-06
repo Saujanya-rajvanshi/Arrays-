@@ -2,6 +2,59 @@
 Array basic 
 
 ```c
+ #include <stdio.h>
+ #define MAX100
+ void display(int arr[], int n)
+ {
+ printf("Array elements: ");
+ for (int i = 0; i < n; i++)
+ printf("%d ", arr[i]);
+ printf("\n");
+ }
+ void insert(int arr[], int *n, int pos, int val)
+ {
+ if (*n >= MAX) {
+ printf("Array is full, insertion not possible!\n");
+ return;
+ }
+ if (pos < 0 || pos > *n)
+ {
+ printf("Invalid position!\n");
+ return;
+ }
+ for (int i = *n; i > pos; i--)
+ arr[i] = arr[i- 1];
+ arr[pos] = val;
+ (*n)++;
+ }
+ void delete(int arr[], int *n, int pos) {
+ if (*n <= 0) {
+ printf("Array is empty, deletion not possible!\n");
+ return;
+ }
+ if (pos < 0 || pos >= *n)
+ {
+ printf("Invalid position!\n");
+ return;
+ }
+ for (int i = pos; i < *n- 1; i++)
+ arr[i] = arr[i + 1];
+ (*n)--;
+ }
+ void reverse(int arr[], int n)
+ {
+ int start = 0, end = n- 1
+```
+
+
+
+
+
+
+
+
+
+```c
 #include <stdio.h>
 #define MAX 5
 
