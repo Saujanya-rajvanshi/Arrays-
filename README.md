@@ -1,4 +1,102 @@
-# Arrays-
+# Arrays
+
+##### index
+1. insertion ,del ,search,rev ,display
+
+```cpp
+#include <iostream>
+using namespace std;
+
+#define MAX 5
+
+void insertElement(int *ar, int p, int n);
+void display(int *ar);
+void reverseArray(int *ar);
+void deleteElement(int *ar, int p);
+void searchElement(int *ar, int n);
+
+int main() {
+    int ar[MAX] = {0};
+
+    insertElement(ar, 0, 11);
+    insertElement(ar, 1, 12);
+    insertElement(ar, 2, 13);
+    insertElement(ar, 3, 14);
+    insertElement(ar, 4, 15);
+
+    cout << "Array after insertion:\n";
+    display(ar);
+
+    cout << "\nArray after deletion (delete position 2):\n";
+    deleteElement(ar, 2);
+    display(ar);
+
+    insertElement(ar, 2, 13);
+
+    cout << "\nArray after reverse:\n";
+    reverseArray(ar);
+    display(ar);
+
+    int n;
+    cout << "\nWhich element do you want to search? ";
+    cin >> n;
+    searchElement(ar, n);
+
+    return 0;
+}
+
+void insertElement(int *ar, int p, int n) {
+    if (p < 0 || p >= MAX) {
+        cout << "Invalid position!\n";
+        return;
+    }
+    for (int i = MAX - 1; i > p; i--) {
+        ar[i] = ar[i - 1];
+    }
+    ar[p] = n;
+}
+
+void deleteElement(int *ar, int p) {
+    if (p < 0 || p >= MAX) {
+        cout << "Invalid position!\n";
+        return;
+    }
+    for (int i = p; i < MAX - 1; i++) {
+        ar[i] = ar[i + 1];
+    }
+    ar[MAX - 1] = 0;
+}
+
+void reverseArray(int *ar) {
+    for (int i = 0; i < MAX / 2; i++) {
+        int t = ar[i];
+        ar[i] = ar[MAX - 1 - i];
+        ar[MAX - 1 - i] = t;
+    }
+}
+
+void searchElement(int *ar, int n) {
+    for (int i = 0; i < MAX; i++) {
+        if (ar[i] == n) {
+            cout << "Element " << n << " found at position " << i + 1 << endl;
+            return;
+        }
+    }
+    cout << "Element " << n << " not found.\n";
+}
+
+void display(int *ar) {
+    for (int i = 0; i < MAX; i++) {
+        cout << ar[i] << " ";
+    }
+    cout << endl;
+}
+```
+
+
+
+
+
 Array basic 
 ```cpp
 #include <bits/stdc++.h>
@@ -104,74 +202,6 @@ int main() {
 
 
 
-```c
-#include <stdio.h>
-#define MAX 5
-
-void insert(int *ar, int p, int n);
-void display(int *ar);
-void rev(int *ar);
-void del(int *ar,int p)
-void search(int *ar,int n);
-
-int main()
-{
-    int ar[MAX]={0};
-    
-    int ar(ar,0,11);
-    int ar(ar,1,12);
-    int ar(ar,2,13);
-    int ar(ar,3,14);
-    int ar(ar,4,15)
-    
-    printf("array after insertion :\n");
-    display(ar);
-    
-    printf("array after deletion :\n");
-    del(ar);
-    display (ar);
-    insert(ar,2,13);
-    
-    printf("array after reverse :\n");
-    rev(ar);
-    display(ar);
-    
-    int n;
-    printf("what element dou you want to search");
-    scanf("%d",&n);
-    search(ar,n);
-
-    
-    return 0;
-}
-
-void insert(int *ar, int p,int n){
-    for(int i = MAX-1;i>p;i--){
-        ar[i]=ar[i-1];
-    }
-    ar[p]=n;
-}
-
-void rev(int *ar){
-    for(int i=0;i<MAX-1 ;i--){
-        int i = ar[i];
-        ar[i]= ar[MAX-1-i];
-        ar[MAX-1-i]=t;
-    }
-}
-
-void search(int *ar,int n){
-    for(int i =0;i< Max;i++){
-        if(ar[i]==n){
-            printf("element %d found at position %d\n",n,i+1);
-            return;
-        }
-    printf("element %d not found");
-    }
-}
-
-
-```
 
 
 --- 
