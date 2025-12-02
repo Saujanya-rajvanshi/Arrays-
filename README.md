@@ -3,6 +3,7 @@
 ##### index
 1. insertion ,del ,search,rev ,display
 2. find largest element
+3. second largest
 
 ###### ins , del , search , rev , dis
 ```cpp
