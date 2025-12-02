@@ -4,6 +4,7 @@
 1. insertion ,del ,search,rev ,display
 2. find largest element
 
+###### ins , del , search , rev , dis
 ```cpp
 #include <iostream>
 using namespace std;
