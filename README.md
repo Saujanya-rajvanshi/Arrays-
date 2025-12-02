@@ -92,9 +92,18 @@ void display(int *ar) {
     cout << endl;
 }
 ```
-
-
-
+```cpp
+#include <bits/stdc++.h>
+largestElement(vector<int> &arr, int n) {
+    int largest = arr[0] ;
+    for(int i = 0;i<n; i++) {
+        if(arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+return largest;
+}
+```
 
 
 Array basic 
