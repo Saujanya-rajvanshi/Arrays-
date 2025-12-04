@@ -190,6 +190,8 @@ vector<int> rotateArray(vector<int> &arr, int temp,i){
 }
 ```
 ###### left rotate upto d index
+       tc = O(n+d)
+       sc = O(d)
 ```cpp
 #include <bits/stdc++.h>
 #include <iostream>
