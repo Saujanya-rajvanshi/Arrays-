@@ -176,7 +176,7 @@ return i+1;
 }
 ```
 
-###### rotate array
+###### left rotate array
 ```cpp
 #include <bits/stdc++.h>
 vector<int> rotateArray(vector<int> &arr, int temp,i){
