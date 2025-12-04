@@ -162,7 +162,7 @@ int main() {
     return 0;
 }
 ```
-
+###### remove duplicate
 ```cpp
 int removeDuplicates(vector<int> &arr, int n) {
     int i = 0;
@@ -175,6 +175,8 @@ int removeDuplicates(vector<int> &arr, int n) {
 return i+1;
 }
 ```
+
+###### rotate array
 ```cpp
 #include <bits/stdc++.h>
 vector<int> rotateArray(vector<int> &arr, int temp,i){
