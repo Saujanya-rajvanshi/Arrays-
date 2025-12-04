@@ -4,6 +4,7 @@
 1. insertion ,del ,search,rev ,display
 2. find largest element
 3. second largest
+4. remove duplication
 
 ###### ins , del , search , rev , dis
 ```cpp
