@@ -6,6 +6,7 @@
 3. second largest
 4. remove duplication
 5. left rotate one place
+6. left rotate upto d place
 
 ###### ins , del , search , rev , dis
 ```cpp
