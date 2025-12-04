@@ -5,6 +5,7 @@
 2. find largest element
 3. second largest
 4. remove duplication
+5. left rotate one place
 
 ###### ins , del , search , rev , dis
 ```cpp
