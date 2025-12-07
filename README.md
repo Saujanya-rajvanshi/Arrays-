@@ -7,6 +7,7 @@
 4. remove duplication
 5. left rotate one place
 6. left rotate upto d place
+7. shift zeros to the last
 
 ###### ins , del , search , rev , dis
 ```cpp
@@ -240,7 +241,7 @@ int main() {
     return 0;
 }
 ```
-```
+```cpp
 void Reverse(int arr[], int start, int end){
     while (start <= end){
         int temp = arr[start];
@@ -252,3 +253,24 @@ void Reverse(int arr[], int start, int end){
 }
 ```
 
+###### shift zeros to the last
+```cpp
+vector<int> moveZeros(int n, vector<int> a) {
+
+// step - 1
+vector<int> temp;
+for(int i = 0;i<n; i++) {
+    if(a[i] != ø) {
+        temp.push_back(a[i]);
+}
+// step - 2
+int nz = temp.size();
+for(int i = 0; i<nz; i++) {
+     a[i] = temp[i];
+}
+// step - 3
+for(int i = nz; i<n; i++) {
+    a[i] =0;
+}
+}
+```
