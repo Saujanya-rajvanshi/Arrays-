@@ -8,6 +8,7 @@
 5. left rotate one place
 6. left rotate upto d place
 7. shift zeros to the last
+8. linear search
 
 ###### ins , del , search , rev , dis
 ```cpp
@@ -295,6 +296,14 @@ for(int i = j+1;i<n; i++) {
 }
 ```
 
-I
-
-return a;
+###### linear search
+```
+int linearSearch(int n, int num, vector<int> &arr) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == num) {
+            return i; // found
+        }
+    }
+    return -1; // not found
+}
+```
