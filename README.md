@@ -9,6 +9,7 @@
 6. left rotate upto d place
 7. shift zeros to the last
 8. linear search
+9. union of array
 
 ###### ins , del , search , rev , dis
 ```cpp
@@ -305,5 +306,37 @@ int linearSearch(int n, int num, vector<int> &arr) {
         }
     }
     return -1; // not found
+}
+```
+###### union array
+
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> sortedArray(vector<int> a, vector<int> b) {
+
+    int n1 = a.size();
+    int n2 = b.size();
+
+    set<int> st;
+
+    // insert elements of a
+    for (int i = 0; i < n1; i++) {
+        st.insert(a[i]);
+    }
+
+    // insert elements of b
+    for (int i = 0; i < n2; i++) {
+        st.insert(b[i]);
+    }
+
+    // copy set to vector
+    vector<int> temp;
+    for (auto it : st) {
+        temp.push_back(it);
+    }
+
+    return temp;
 }
 ```
