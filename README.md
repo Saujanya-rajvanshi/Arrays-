@@ -393,6 +393,10 @@ return unionArr;
 
 ###### intersection of array
 ```
+TC = O(N1 * N2)
+SC = O(N2) 
+```
+```
 #include <bits/stdc++.h>
 using namespace std;
 
