@@ -276,7 +276,7 @@ for(int i = nz; i<n; i++) {
 }
 }
 ```
-```
+```cpp
 vector<int> moveZeros(int n, vector<int> a) {
     int j = -1;
     for(int i = 0;i<n; i++) {
@@ -298,7 +298,7 @@ for(int i = j+1;i<n; i++) {
 ```
 
 ###### linear search
-```
+```cpp
 int linearSearch(int n, int num, vector<int> &arr) {
     for (int i = 0; i < n; i++) {
         if (arr[i] == num) {
@@ -309,8 +309,12 @@ int linearSearch(int n, int num, vector<int> &arr) {
 }
 ```
 ###### union array
-
 ```
+TC = O(N1log n + N2log n) + O(N1+N2)
+SC = O(N1+N2) +O(N1+N2)
+```
+
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
