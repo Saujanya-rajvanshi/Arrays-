@@ -344,6 +344,10 @@ vector<int> sortedArray(vector<int> a, vector<int> b) {
     return temp;
 }
 ```
+```
+TC = O(N1 + N2)
+SC = O(N1 + N2) //not for the nswer but for the ans to return 
+```
 ```cpp
 #include<bits/stdc++.h>
 vector < int > sortedArray(vector < int > a,
