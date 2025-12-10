@@ -489,9 +489,12 @@ int main() {
     return 0;
 }
 ```
-
+```
+TC = O(N)
+SC = O(1)
+```
 ```cpp
-//ptimal aproach by sumation
+//optimal aproach by sumation
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -513,6 +516,33 @@ int main() {
     // Step 3: Missing number = expected sum - actual sum
     cout << "Missing number = " << (sum - s2);
 
+    return 0;
+}
+```
+```
+TC = O(N)
+SC = O(1)
+```
+```cpp
+//optimal aproach by xor
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int arr[] = {1, 2, 4, 5};
+    int N = 5;
+
+    int xor1 = 0;
+    for (int i = 1; i <= N; i++) {
+        xor1 ^= i;
+    }
+
+    int xor2 = 0;
+    for (int i = 0; i < N - 1; i++) {
+        xor2 ^= arr[i];
+    }
+
+    cout << "Missing number = " << (xor1 ^ xor2);
     return 0;
 }
 ```
