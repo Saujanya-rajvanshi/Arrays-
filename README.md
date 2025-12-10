@@ -576,3 +576,41 @@ int main() {
     return 0;
 }
 ```
+###### find single number 
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int singleNumber(vector<int>& arr) {
+    int n = arr.size();
+
+    for (int i = 0; i < n; i++) {
+
+        int num = arr[i];
+        int cnt = 0;
+
+        // Count frequency of arr[i]
+        for (int j = 0; j < n; j++) {
+            if (arr[j] == num) {
+                cnt++;
+            }
+        }
+
+        // If frequency is 1, this is the unique number
+        if (cnt == 1) {
+            return num;
+        }
+    }
+
+    return -1; // Not found (optional)
+}
+
+int main() {
+    vector<int> arr = {1, 2, 3, 2, 1};
+
+    cout << singleNumber(arr);
+
+    return 0;
+}
+```
+```cpp
