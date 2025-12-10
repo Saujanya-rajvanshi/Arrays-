@@ -12,6 +12,7 @@
 9. union of array
 10. intersection of array
 11. find the missing number
+12. maximum no. of consecutive ones
 
 ###### ins , del , search , rev , dis
 ```cpp
@@ -543,6 +544,35 @@ int main() {
     }
 
     cout << "Missing number = " << (xor1 ^ xor2);
+    return 0;
+}
+```
+###### maximum no. of consecutive ones
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int findMaxConsecutiveOnes(vector<int>& nums) {
+    int maxi = 0;
+    int cnt = 0;
+
+    for (int i = 0; i < nums.size(); i++) {
+        if (nums[i] == 1) {
+            cnt++;
+            maxi = max(maxi, cnt);
+        } else {
+            cnt = 0;
+        }
+    }
+
+    return maxi;
+}
+
+int main() {
+    vector<int> nums = {1, 1, 0, 1, 1, 1};
+
+    cout << "Max consecutive ones = " << findMaxConsecutiveOnes(nums);
+
     return 0;
 }
 ```
