@@ -11,6 +11,7 @@
 8. linear search
 9. union of array
 10. intersection of array
+11. find the missing number
 
 ###### ins , del , search , rev , dis
 ```cpp
@@ -455,4 +456,36 @@ vector<int> findArrayIntersection(vector<int> &A, int n,
     return ans;
 }
 ```
+###### find missing number
+```
+TC = O(N)+O(N)
+SC = O(N)
+```
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
 
+int main() {
+    int arr[] = {1, 2, 4, 5};
+    int N = 5;   // numbers are from 1 to N
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    // Step 1: Create hash array of size N+1 initialized with 0
+    vector<int> hashArr(N + 1, 0);
+
+    // Step 2: Mark elements present in arr
+    for (int i = 0; i < n-1; i++) {
+        hashArr[arr[i]] = 1;
+    }
+
+    // Step 3: Find the index which is still 0 → that's the missing number
+    for (int i = 1; i <= N; i++) {
+        if (hashArr[i] == 0) {
+            cout << "Missing number = " << i;
+            return 0;
+        }
+    }
+
+    return 0;
+}
+```
