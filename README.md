@@ -489,3 +489,30 @@ int main() {
     return 0;
 }
 ```
+
+```cpp
+//ptimal aproach by sumation
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int arr[] = {1, 2, 3 ,4 ,5 ,6 ,8 ,9 ,10};
+    int N = 10;  // numbers should be from 1 to N
+
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    // Step 1: Calculate expected sum of 1 to N
+    int sum = N * (N + 1) / 2;
+
+    // Step 2: Calculate actual sum of array
+    int s2 = 0;
+    for (int i = 0; i < n; i++) {
+        s2 += arr[i];
+    }
+
+    // Step 3: Missing number = expected sum - actual sum
+    cout << "Missing number = " << (sum - s2);
+
+    return 0;
+}
+```
