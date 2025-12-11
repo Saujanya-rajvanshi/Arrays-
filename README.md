@@ -1,4 +1,4 @@
-# Arrays
+<img width="798" height="661" alt="image" src="https://github.com/user-attachments/assets/b28cfe87-ff0e-4f21-bdc7-a98cd46adf64" /># Arrays
 
 ##### index
 1. insertion ,del ,search,rev ,display
@@ -667,6 +667,38 @@ int longestSubarrayWithSumK(vector<int> &a, long long k) {
         if (preSumMap.find(sum) == preSumMap.end()) {
             preSumMap[sum] = i;
         }
+    }
+
+    return maxLen;
+}
+```
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int longestSubarrayWithSumK(vector<int> &a, long long k) {
+
+    int left = 0, right = 0;
+    long long sum = 0;
+    int maxLen = 0;
+    int n = a.size();
+
+    while (right < n) {
+
+        sum += a[right];   // expand window
+
+        // shrink window if sum is too big
+        while (left <= right && sum > k) {
+            sum -= a[left];
+            left++;
+        }
+
+        // check if we got exactly k
+        if (sum == k) {
+            maxLen = max(maxLen, right - left + 1);
+        }
+
+        right++; // move right forward
     }
 
     return maxLen;
