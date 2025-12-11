@@ -13,7 +13,8 @@
 10. intersection of array
 11. find the missing number
 12. maximum no. of consecutive ones
-
+13. longest subarray with sum k
+    
 ###### ins , del , search , rev , dis
 ```cpp
 #include <iostream>
@@ -633,5 +634,41 @@ int main() {
     cout << getSingleElement(arr) << endl;
 
     return 0;
+}
+```
+###### longest subarray with sum k
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int longestSubarrayWithSumK(vector<int> &a, long long k) {
+
+    map<long long, int> preSumMap;
+    long long sum = 0;
+    int maxLen = 0;
+
+    for(int i = 0; i < a.size(); i++) {
+
+        sum += a[i];
+
+        // Case 1: entire subarray from 0...i has sum k
+        if (sum == k) {
+            maxLen = max(maxLen, i + 1);
+        }
+
+        // Case 2: check if (sum - k) exists in map
+        long long rem = sum - k;
+        if (preSumMap.find(rem) != preSumMap.end()) {
+            int len = i - preSumMap[rem];
+            maxLen = max(maxLen, len);
+        }
+
+        // Store prefix sum if seeing for first time
+        if (preSumMap.find(sum) == preSumMap.end()) {
+            preSumMap[sum] = i;
+        }
+    }
+
+    return maxLen;
 }
 ```
