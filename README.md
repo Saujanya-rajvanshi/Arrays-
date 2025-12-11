@@ -1,4 +1,4 @@
-<img width="798" height="661" alt="image" src="https://github.com/user-attachments/assets/b28cfe87-ff0e-4f21-bdc7-a98cd46adf64" /># Arrays
+# ARRAY
 
 ##### index
 1. insertion ,del ,search,rev ,display
