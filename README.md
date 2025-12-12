@@ -14,6 +14,7 @@
 11. find the missing number
 12. maximum no. of consecutive ones
 13. longest subarray with sum k
+14. two sum
     
 ###### ins , del , search , rev , dis
 ```cpp
@@ -703,4 +704,27 @@ int longestSubarrayWithSumK(vector<int> &a, long long k) {
 
     return maxLen;
 }
+```
+###### two sum
+```cpp
+string read(int n, vector<int> &book, int target) {
+    map<int, int> mpp;
+
+    for(int i = 0; i < n; i++) {
+        int a = book[i];
+        int more = target - a;
+
+        // Check if the pair exists
+        if(mpp.find(more) != mpp.end()) {
+            return "YES";      // pair found
+            // return {mpp[more], i}; // if you want indexes
+        }
+
+        // store current number's index
+        mpp[a] = i;
+    }
+
+    return "NO";  // no pair found
+}
+
 ```
