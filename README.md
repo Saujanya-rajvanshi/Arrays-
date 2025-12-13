@@ -15,6 +15,7 @@
 12. maximum no. of consecutive ones
 13. longest subarray with sum k
 14. two sum
+15. sort an aaray of 0`s 1`s & 2`s
     
 ###### ins , del , search , rev , dis
 ```cpp
