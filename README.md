@@ -16,6 +16,7 @@
 13. longest subarray with sum k
 14. two sum
 15. sort an aaray of 0`s 1`s & 2`s
+16. majaority element n/2
     
 ###### ins , del , search , rev , dis
 ```cpp
@@ -776,5 +777,26 @@ void sortArray(vector<int>& arr, int n) {
             high--;
         }
     }
+}
+```
+###### majority element n/2
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int majorityElement(vector<int>& v) {
+    unordered_map<int, int> mpp;
+
+    for (int i = 0; i < v.size(); i++) {
+        mpp[v[i]]++;
+    }
+
+    for (auto it : mpp) {
+        if (it.second > v.size() / 2) {
+            return it.first;
+        }
+    }
+
+    return -1;
 }
 ```
