@@ -756,6 +756,7 @@ string read(int n, vector<int> book, int target) {
 ```
 
 ###### sort an aaray of 0`s 1`s & 2`s
+algorithm
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -780,6 +781,7 @@ void sortArray(vector<int>& arr, int n) {
 }
 ```
 ###### majority element n/2
+algorithm
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -800,3 +802,39 @@ int majorityElement(vector<int>& v) {
     return -1;
 }
 ```
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int majorityElement(vector<int>& v) {
+    int cnt = 0;
+    int el = -1;
+
+    // Step 1: Find candidate
+    for (int i = 0; i < v.size(); i++) {
+        if (cnt == 0) {
+            el = v[i];
+            cnt = 1;
+        } else if (v[i] == el) {
+            cnt++;
+        } else {
+            cnt--;
+        }
+    }
+
+    // Step 2: Verify candidate
+    int cnt1 = 0;
+    for (int i = 0; i < v.size(); i++) {
+        if (v[i] == el) cnt1++;
+    }
+
+    if (cnt1 > v.size() / 2)
+        return el;
+
+    return -1;
+}
+```
+
+
+
+
