@@ -4,6 +4,7 @@
 - [ADT](#ADT)
 - [find largest element](#largest-element)
 - [find second largest](#second-largest)
+- [chech if array is sorted](#check-sort)
 4. remove duplication
 5. left rotate one place
 6. left rotate upto d place
