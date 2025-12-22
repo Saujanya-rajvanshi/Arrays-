@@ -3,7 +3,7 @@
 ##### index
 - [ADT](#ADT)
 - [find largest element](#largest-element)
-3. second largest
+- [find second largest](#second-largest)
 4. remove duplication
 5. left rotate one place
 6. left rotate upto d place
@@ -124,7 +124,7 @@ return largest;
 ```
 
 
-Array basic 
+###### second largest 
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
