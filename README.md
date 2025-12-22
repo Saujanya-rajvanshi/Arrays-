@@ -205,6 +205,16 @@ int main() {
     return 0;
 }
 ```
+###### check sort 
+```cpp
+for(i=0;i<n;i++){
+    if (ar[i] >= ar[i-1]{
+        cout << "array is sorted "
+    }
+    else{
+        cout << "array is not sorted";
+}
+```
 
 ###### remove duplicate
 ```cpp
