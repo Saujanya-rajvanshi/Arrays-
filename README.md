@@ -127,13 +127,32 @@ return largest;
 
 
 ###### second largest 
+
 ```cpp
 //BRUTE
 //sort and check if from the back the element is equal to largest aka last element eg : 1 2 3 4 5 7 7  TC = O(NLOGN + N )
 
 //BETTER
-//check while traversing if the elem is largest than the largest aka 0 index  TC = O(2N)
+//check while traversing if the elem is largest than the largest aka 0 index and it  TC = O(2N)
 
+    int largest = ar[0];
+    int secondLargest = -1;
+
+    for (int i = 0; i < n; i++) {
+        if (arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+    for (int i = 0; i < n; i++) {
+        if (arr[i] > secondLargest && arr[i] != largest) {
+            secondLargest = arr[i];
+        }
+    }
+
+    cout << "Second Largest: " << secondLargest;
+```
+
+```cpp
 //OPTIMAL
 #include <bits/stdc++.h>
 using namespace std;
@@ -185,6 +204,7 @@ int main() {
     return 0;
 }
 ```
+
 ###### remove duplicate
 ```cpp
 int removeDuplicates(vector<int> &arr, int n) {
