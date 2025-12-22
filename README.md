@@ -1,7 +1,7 @@
 # ARRAY
 
 ##### index
-- [1.ADT](#ADT)
+- [ADT](#ADT)
 - [find largest element](#largest-element)
 3. second largest
 4. remove duplication
