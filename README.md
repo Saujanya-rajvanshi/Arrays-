@@ -174,7 +174,7 @@ int secondLargest(vector<int> &a, int n) {
 
     return slargest;
 
-//TC = O(2N)
+//TC = O(N)
 }
 
 int secondSmallest(vector<int> &a, int n) {
