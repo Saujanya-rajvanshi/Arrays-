@@ -1,7 +1,7 @@
 # ARRAY
 
 ##### index
-- [1.ins, del, search, rev, dis](#in,-del,-search,-rev,-dis)
+- [1.ADT](#ADT)
 2. find largest element
 3. second largest
 4. remove duplication
@@ -18,7 +18,7 @@
 15. sort an aaray of 0`s 1`s & 2`s
 16. majaority element n/2
     
-###### ins, del, search, rev, dis
+###### ADT
 ```cpp
 #include <iostream>
 using namespace std;
