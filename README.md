@@ -109,7 +109,7 @@ void display(int *ar) {
 }
 ```
 
-###### largest elem
+###### largest element
 ```cpp
 #include <bits/stdc++.h>
 largestElement(vector<int> &arr, int n) {
