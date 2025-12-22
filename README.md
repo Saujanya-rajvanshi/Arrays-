@@ -121,6 +121,8 @@ largestElement(vector<int> &arr, int n) {
     }
 return largest;
 }
+
+//TC = O(N)
 ```
 
 
