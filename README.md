@@ -128,12 +128,20 @@ return largest;
 
 ###### second largest 
 ```cpp
+//BRUTE
+//sort and check if from the back the element is equal to largest aka last element eg : 1 2 3 4 5 7 7  TC = O(NLOGN + N )
+
+//BETTER
+//check while traversing if the elem is largest than the largest aka 0 index  TC = O(2N)
+
+//OPTIMAL
 #include <bits/stdc++.h>
 using namespace std;
 
 int secondLargest(vector<int> &a, int n) {
     int largest = a[0];
-    int slargest = -1;
+    int slargest = -1 // for all positives;
+                // INT_MIN if array contains negatives
 
     for (int i = 1; i < n; i++) {
         if (a[i] > largest) {
@@ -146,6 +154,8 @@ int secondLargest(vector<int> &a, int n) {
     }
 
     return slargest;
+
+//TC = O(2N)
 }
 
 int secondSmallest(vector<int> &a, int n) {
