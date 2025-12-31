@@ -5,7 +5,7 @@
 - [find largest element](#largest-element)
 - [find second largest](#second-largest)
 - [chech if array is sorted](#check-sort)
-4. remove duplication
+- [remove duplicate](#remove-duplicate)
 5. left rotate one place
 6. left rotate upto d place
 7. shift zeros to the last
