@@ -15,7 +15,7 @@
 - [find missing number](#find-missing-number)
 - [maximum no. of consecutive ones](#maximum-no-of-consecutive-ones)
 - [find single number](#find-single-number)
-13. longest subarray with sum k
+- 13. longest subarray with sum k
 14. two sum
 15. sort an aaray of 0`s 1`s & 2`s
 16. majaority element n/2
