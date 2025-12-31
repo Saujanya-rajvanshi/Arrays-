@@ -10,7 +10,7 @@
 - [left rotate upto d index](#left-rotate-upto-d-index)
 - [shift zeros to the last](#shift-zeros-to-the-last)
 - [linear search](#linear-search)
-- [union array](#union-array)
+- [union of array](#union-array)
 - [intersection of array](#intersection-of-array)
 - [find missing number](#find-missing-number)
 - [maximum no. of consecutive ones](#maximum-no-of-consecutive-ones)
