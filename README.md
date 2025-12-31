@@ -8,7 +8,7 @@
 - [remove duplicate](#remove-duplicate)
 - [left rotate array](#left-rotate-array)
 - [left rotate upto d index](#left-rotate-upto-d-index)
-7. shift zeros to the last
+- [shift zeros to the last](#shift-zeros-to-the-last)
 8. linear search
 9. union of array
 10. intersection of array
