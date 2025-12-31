@@ -9,7 +9,7 @@
 - [left rotate array](#left-rotate-array)
 - [left rotate upto d index](#left-rotate-upto-d-index)
 - [shift zeros to the last](#shift-zeros-to-the-last)
-8. linear search
+- [](#shift zeros to the last)
 9. union of array
 10. intersection of array
 11. find the missing number
