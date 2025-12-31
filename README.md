@@ -3,7 +3,7 @@
 ##### index
 - [ADT](#ADT)
 - [find largest element](#largest-element)
-- [find second largest](#second-largest)
+- [find second smallest largest ](#second-smallest-and-largest)
 - [chech if array is sorted](#check-sort)
 - [remove duplicate](#remove-duplicate)
 - [left rotate array](#left-rotate-array)
@@ -128,7 +128,7 @@ return largest;
 ```
 
 
-###### second largest 
+###### second smallest and largest 
 
 ```cpp
 //BRUTE
