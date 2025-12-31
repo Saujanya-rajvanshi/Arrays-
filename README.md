@@ -6,7 +6,7 @@
 - [find second largest](#second-largest)
 - [chech if array is sorted](#check-sort)
 - [remove duplicate](#remove-duplicate)
-5. left rotate one place
+- [left rotate array](#left-rotate-array)
 6. left rotate upto d place
 7. shift zeros to the last
 8. linear search
