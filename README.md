@@ -18,7 +18,7 @@
 - [longest subarray with sum k](#longest-subarray-with-sum-k)
 - [two sum](#two-sum)
 - [sort an aaray of zeros ones wos](#sort-an-aaray-of-zeros-ones-twos)
-16. majaority element n/2
+- [majority element n/2](#majority-element-n/2)
     
 ###### ADT
 ```cpp
