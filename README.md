@@ -17,7 +17,7 @@
 - [find single number](#find-single-number)
 - [longest subarray with sum k](#longest-subarray-with-sum-k)
 - [two sum](#two-sum)
-- [sort an aaray of zeros ones and twos](#sort-an-aaray-of-zeros-ones-twos)
+- [sort an aaray of zeros ones wos](#sort-an-aaray-of-zeros-ones-twos)
 16. majaority element n/2
     
 ###### ADT
