@@ -6,7 +6,7 @@
 - [find second smallest largest ](#second-smallest-and-largest)
 - [chech if array is sorted](#check-sort)
 - [remove duplicate](#remove-duplicate)
-- [left rotate array](#left-rotate-array)
+- [left rotate array by one place](#left-rotate-array)
 - [left rotate upto d index](#left-rotate-upto-d-index)
 - [shift zeros to the last](#shift-zeros-to-the-last)
 - [linear search](#linear-search)
