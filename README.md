@@ -824,7 +824,7 @@ void sortArray(vector<int>& arr, int n) {
     }
 }
 ```
-###### majority element n/2
+###### majority element n divide two
 algorithm
 ```cpp
 #include <bits/stdc++.h>
