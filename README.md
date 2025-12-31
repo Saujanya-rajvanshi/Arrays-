@@ -799,7 +799,7 @@ string read(int n, vector<int> book, int target) {
 }
 ```
 
-###### sort an aaray of zeros ones and twos
+###### sort an aaray of zeros ones twos
 algorithm
 ```cpp
 #include <bits/stdc++.h>
