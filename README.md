@@ -11,7 +11,7 @@
 - [shift zeros to the last](#shift-zeros-to-the-last)
 - [linear search](#linear-search)
 - [union array](#union-array)
-10. intersection of array
+- [intersection of array](#intersection-of-array)
 11. find the missing number
 12. maximum no. of consecutive ones
 13. longest subarray with sum k
