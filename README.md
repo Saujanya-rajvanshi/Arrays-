@@ -7,7 +7,7 @@
 - [chech if array is sorted](#check-sort)
 - [remove duplicate](#remove-duplicate)
 - [left rotate array](#left-rotate-array)
-6. left rotate upto d place
+- [left rotate upto d index](#left-rotate-upto-d-index)
 7. shift zeros to the last
 8. linear search
 9. union of array
