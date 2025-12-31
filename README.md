@@ -12,7 +12,7 @@
 - [linear search](#linear-search)
 - [union array](#union-array)
 - [intersection of array](#intersection-of-array)
-11. find the missing number
+- [find missing number](#find-missing-number)
 12. maximum no. of consecutive ones
 13. longest subarray with sum k
 14. two sum
