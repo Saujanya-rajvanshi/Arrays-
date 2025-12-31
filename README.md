@@ -16,8 +16,8 @@
 - [maximum no. of consecutive ones](#maximum-no-of-consecutive-ones)
 - [find single number](#find-single-number)
 - [longest subarray with sum k](#longest-subarray-with-sum-k)
-14. two sum
-15. sort an aaray of 0`s 1`s & 2`s
+- [two sum](#two-sum)
+- [sort an aaray of 0s 1s & 2`s](#sort-an-aaray-of-0s-1s-2s)
 16. majaority element n/2
     
 ###### ADT
