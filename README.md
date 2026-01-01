@@ -19,6 +19,7 @@
 - [two sum](#two-sum)
 - [sort an aaray of zeros ones wos](#sort-an-aaray-of-zeros-ones-twos)
 - [majority element n divide two](#majority-element-n-divide-two)
+- [kadanes algorithm maximum subarray sum](#kadanes-algorithm-maximum-subarray-sum)
     
 ###### ADT
 ```cpp
@@ -879,6 +880,59 @@ int majorityElement(vector<int>& v) {
 }
 ```
 
+### kadanes algorithm maximum subarray sum
+```cpp
+//brute aproach
 
+TC = O(N³)    SC = O(1)
+
+for (int i = 0; i < n; i++) {
+    for (int j = i; j < n; j++) {
+        int sum = 0;
+        for (int k = i; k <= j; k++) {
+            sum += arr[k];
+        }
+        maxm = max(maxm, sum);
+    }
+}
+
+//better aproach 
+
+TC = O(N²)    SC = O(1)
+
+int maxm = INT_MIN;
+
+for (int i = 0; i < n; i++) {
+     int sum = 0;
+    for (int j = i; j < n; j++) {
+        int sum = sum + arr;
+    }
+}
+
+
+// optimal - kadans algorithm
+
+TC = O(N)    SC = O(1)
+
+int sum = 0, maxm = INT_MIN;
+int start = 0, ansStart = 0, ansEnd = 0;
+
+for (int i = 0; i < n; i++) {
+    if (sum == 0) start = i;
+
+    sum += arr[i];
+
+    if (sum > maxm) {
+        maxm = sum;
+        ansStart = start;
+        ansEnd = i;
+    }
+
+    if (sum < 0) {
+        sum = 0;
+    }
+}
+
+```
 
 
