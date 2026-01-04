@@ -4,30 +4,11 @@
 - [basic](#basic)
 - [ADT](#ADT)
 - [types](#Type)
-- [find largest element](#largest-element)
-- [find second smallest largest ](#second-smallest-and-largest)
-- [chech if array is sorted](#check-sort)
-- [remove duplicate](#remove-duplicate)
-- [left rotate array by one place](#left-rotate-array)
-- [left rotate upto d index](#left-rotate-upto-d-index)
-- [shift zeros to the last](#shift-zeros-to-the-last)
-- [linear search](#linear-search)
-- [union of array](#union-array)
-- [intersection of array](#intersection-of-array)
-- [find missing number](#find-missing-number)
-- [maximum no. of consecutive ones](#maximum-no-of-consecutive-ones)
-- [find single number](#find-single-number)
-- [longest subarray with sum k](#longest-subarray-with-sum-k)
-- [two sum](#two-sum)
-- [sort an aaray of zeros ones wos](#sort-an-aaray-of-zeros-ones-twos)
-- [majority element n divide two](#majority-element-n-divide-two)
-- [kadanes algorithm maximum subarray sum](#kadanes-algorithm-maximum-subarray-sum)
-
+- [striver a to z questions](#striver-a-to-z-questions)
+  
 ###### basic 
 elements aranged in continuous memory <br>
 elements are of same type <br>
-
-
 
     
 ###### ADT
@@ -160,6 +141,29 @@ N = no. of coloumns
 LR AND LC are usualy 0 . 
 
 ```
+
+
+### striver a to z questions 
+
+- [find largest element](#largest-element)
+- [find second smallest largest ](#second-smallest-and-largest)
+- [chech if array is sorted](#check-sort)
+- [remove duplicate](#remove-duplicate)
+- [left rotate array by one place](#left-rotate-array)
+- [left rotate upto d index](#left-rotate-upto-d-index)
+- [shift zeros to the last](#shift-zeros-to-the-last)
+- [linear search](#linear-search)
+- [union of array](#union-array)
+- [intersection of array](#intersection-of-array)
+- [find missing number](#find-missing-number)
+- [maximum no. of consecutive ones](#maximum-no-of-consecutive-ones)
+- [find single number](#find-single-number)
+- [longest subarray with sum k](#longest-subarray-with-sum-k)
+- [two sum](#two-sum)
+- [sort an aaray of zeros ones wos](#sort-an-aaray-of-zeros-ones-twos)
+- [majority element n divide two](#majority-element-n-divide-two)
+- [kadanes algorithm maximum subarray sum](#kadanes-algorithm-maximum-subarray-sum)
+
 
 
 ###### largest element
