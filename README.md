@@ -1,8 +1,10 @@
 # ARRAY
 
 ##### index
-- [basic](#basic)
-- [ADT](#ADT)
+- [basic of array](#basic)
+- [ADT of array](#ADT)
+- [array types](#Types)
+
 - [find largest element](#largest-element)
 - [find second smallest largest ](#second-smallest-and-largest)
 - [chech if array is sorted](#check-sort)
@@ -23,8 +25,10 @@
 - [kadanes algorithm maximum subarray sum](#kadanes-algorithm-maximum-subarray-sum)
 
 ###### basic 
-elements aranged in continuous memory
-elements are of same type 
+elements aranged in continuous memory <br>
+elements are of same type <br>
+
+
 
     
 ###### ADT
@@ -117,6 +121,63 @@ void display(int *ar) {
     cout << endl;
 }
 ```
+
+#######  Types 
+---
+
+## 🔷 Types of Arrays
+
+### 🔹 1. One-Dimensional Array (1D)
+
+* Stores elements in a **single row**
+* Accessed using **one index**
+* Example use: list of marks
+
+---
+
+### 🔹 2. Two-Dimensional Array (2D)
+
+* Stores data in **rows and columns**
+* Accessed using **two indices**
+* Example use: matrices, tables
+
+---
+
+### 🔹 3. Multi-Dimensional Array
+
+* Array with **more than two dimensions**
+* Example use: 3D matrices
+
+---
+
+### 🔹 4. Static Array
+
+* Size fixed at **compile time**
+* Memory allocated statically
+
+---
+
+### 🔹 5. Dynamic Array
+
+* Size decided at **runtime**
+* Memory allocated dynamically
+* Example: `vector`
+
+---
+
+### 🔹 6. Jagged Array
+
+* Array of arrays with **unequal sizes**
+* Supported using pointers / vectors
+
+---
+
+## ⭐ One-Line Summary (Exam)
+
+Arrays can be classified as **1D, 2D, multi-dimensional, static, dynamic, and jagged arrays**.
+
+---
+
 
 ###### largest element
 ```cpp
