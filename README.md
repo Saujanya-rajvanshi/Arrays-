@@ -136,12 +136,32 @@ void display(int *ar) {
    * Supported using pointers / vectors
      
 ---
+---
 
-## ⭐ One-Line Summary (Exam)
+#### size of an array
+numbers of elements = (upper bound - lower buond) + 1 
 
-Arrays can be classified as **1D, 2D, multi-dimensional, static, dynamic, and jagged arrays**.
+#### indexing 
+1 D 
+arr[index] = base + ((index - lower bound)*weight)
+a[i] = B +((i - LB)*W)
+
+2 D 
+column major address 
+       arr[i][j] = B + [(i - LR) + M*(j - LC)]
+
+row major address
+       arr[i][j] = B + [N*(j - LR) + (i - LC)]
+
+arr[LR : M][LC : N] 
+M = no. of rows
+N = no. of coloumns 
+LR AND LC are usualy 0 . 
+
+
 
 ---
+
 
 
 ###### largest element
