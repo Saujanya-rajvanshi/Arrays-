@@ -1,9 +1,9 @@
 # ARRAY
 
 ##### index
-- [basic of array](#basic)
-- [ADT of array](#ADT)
-- [array types](#Type)
+- [basic](#basic)
+- [ADT](#ADT)
+- [types](#Type)
 - [find largest element](#largest-element)
 - [find second smallest largest ](#second-smallest-and-largest)
 - [chech if array is sorted](#check-sort)
