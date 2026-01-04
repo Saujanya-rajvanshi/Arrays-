@@ -6,9 +6,29 @@
 - [types](#Type)
 - [striver a to z questions](#striver-a-to-z-questions)
   
-###### basic 
-elements aranged in continuous memory <br>
-elements are of same type <br>
+### basic 
+* elements aranged in continuous memory 
+* elements are of same type 
+
+## 🔹 Array: Advantages & Disadvantages (Short)
+
+### ✅ Advantages
+
+* ⚡ **Fast access** using index (O(1))
+* 🧩 **Simple to use & understand**
+* 📦 **Contiguous memory allocation**
+* 🚀 **Efficient for fixed-size data**
+
+### ❌ Disadvantages
+
+* 📏 **Fixed size** (cannot grow/shrink easily)
+* 🕳️ **Memory wastage** if size is overestimated
+* 🔄 **Insertion/Deletion is costly** (shifting needed)
+* 🧱 **Not suitable for dynamic data**
+
+⭐ **One-liner**:
+Arrays are fast and simple but lack flexibility.
+
 
     
 ###### ADT
