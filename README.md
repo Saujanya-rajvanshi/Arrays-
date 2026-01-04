@@ -142,6 +142,7 @@ void display(int *ar) {
 numbers of elements = (upper bound - lower buond) + 1 
 
 #### indexing 
+--- 
 1 D 
 arr[index] = base + ((index - lower bound)*weight)
 a[i] = B +((i - LB)*W)
@@ -157,8 +158,6 @@ arr[LR : M][LC : N]
 M = no. of rows
 N = no. of coloumns 
 LR AND LC are usualy 0 . 
-
-
 
 ---
 
