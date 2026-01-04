@@ -1,6 +1,7 @@
 # ARRAY
 
 ##### index
+- [basic](#basic)
 - [ADT](#ADT)
 - [find largest element](#largest-element)
 - [find second smallest largest ](#second-smallest-and-largest)
@@ -20,6 +21,11 @@
 - [sort an aaray of zeros ones wos](#sort-an-aaray-of-zeros-ones-twos)
 - [majority element n divide two](#majority-element-n-divide-two)
 - [kadanes algorithm maximum subarray sum](#kadanes-algorithm-maximum-subarray-sum)
+
+###### basic 
+elements aranged in continuous memory
+elements are of same type 
+
     
 ###### ADT
 ```cpp
