@@ -121,7 +121,7 @@ void display(int *ar) {
 }
 ```
 
-#######  Type
+#### type 
 ---
 
 ## 🔷 Types of Arrays
