@@ -126,49 +126,15 @@ void display(int *ar) {
 
 ## 🔷 Types of Arrays
 
-### 🔹 1. One-Dimensional Array (1D)
-
-* Stores elements in a **single row**
-* Accessed using **one index**
-* Example use: list of marks
-
----
-
-### 🔹 2. Two-Dimensional Array (2D)
-
-* Stores data in **rows and columns**
-* Accessed using **two indices**
-* Example use: matrices, tables
-
----
-
-### 🔹 3. Multi-Dimensional Array
-
-* Array with **more than two dimensions**
-* Example use: 3D matrices
-
----
-
-### 🔹 4. Static Array
-
-* Size fixed at **compile time**
-* Memory allocated statically
-
----
-
-### 🔹 5. Dynamic Array
-
-* Size decided at **runtime**
-* Memory allocated dynamically
-* Example: `vector`
-
----
-
-### 🔹 6. Jagged Array
-
-* Array of arrays with **unequal sizes**
-* Supported using pointers / vectors
-
+#### 🔹 1. One-Dimensional Array (1D)
+#### 🔹 2. Two-Dimensional Array (2D)
+#### 🔹 3. Multi-Dimensional Array
+#### 🔹 4. Static Array
+#### 🔹 5. Dynamic Array
+#### 🔹 6. Jagged Array
+   * Array of arrays with **unequal sizes**
+   * Supported using pointers / vectors
+     
 ---
 
 ## ⭐ One-Line Summary (Exam)
