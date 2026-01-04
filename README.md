@@ -4,7 +4,6 @@
 - [basic of array](#basic)
 - [ADT of array](#ADT)
 - [array types](#Types)
-
 - [find largest element](#largest-element)
 - [find second smallest largest ](#second-smallest-and-largest)
 - [chech if array is sorted](#check-sort)
