@@ -149,16 +149,30 @@ arr[index] = base + ((index - lower bound)*weight)
 a[i] = B +((i - LB)*W)
 
 2 D 
-column major address 
-       arr[i][j] = B + [(i - LR) + M*(j - LC)]
-
 row major address
-       arr[i][j] = B + [N*(j - LR) + (i - LC)]
+       arr[i][j] = B + [N*(i - LR) + (j - LC)] x size 
 
-arr[LR : M][LC : N] 
+column major address 
+       arr[i][j] = B + [(i - LR) + M*(j - LC)] x size
+
+arr[LR : UR][LC : UC] 
 M = no. of rows
 N = no. of coloumns 
-LR AND LC are usualy 0 . 
+LR AND LC are usualy 0 .
+
+3 D
+Row major 
+Address(arr[i][j][k]) =  B + [ (i − LR) * (NC * ND) + (j − LC) * ND + (k − LD) ]
+
+NC = UC − LC + 1   // number of columns 
+ND = UD − LD + 1   // number of depth 
+
+column major
+Address(arr[i][j][k]) = B + [ (k − LD) * (NR * NC) + (j − LC) * NR + (i − LR) ]
+
+NR = UR − LR + 1   // number of rows
+NC = UC − LC + 1   // number of columns
+
 
 ```
 
