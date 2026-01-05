@@ -10,7 +10,7 @@
 * elements aranged in continuous memory 
 * elements are of same type 
 
-## 🔹 Array: Advantages & Disadvantages (Short)
+## 🔹 Array: Advantages & Disadvantages 
 
 ### ✅ Advantages
 
