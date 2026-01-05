@@ -4,6 +4,7 @@
 - [basic](#basic)
 - [ADT](#ADT)
 - [types](#Type)
+- [size of an array](#size-of-an-array)
 - [striver a to z questions](#striver-a-to-z-questions)
   
 # basic 
@@ -133,13 +134,13 @@ void display(int *ar) {
 #### 🔹 4. Static Array
 #### 🔹 5. Dynamic Array
 #### 🔹 6. Jagged Array
-   * Array of arrays with **unequal sizes**
-   * Supported using pointers / vectors
+      * Array of arrays with **unequal sizes**
+      * Supported using pointers / vectors
      
 ---
 ---
 
-#### size of an array
+## size of an array
 numbers of elements = (upper bound - lower buond) + 1 
 
 #### indexing 
