@@ -6,7 +6,7 @@
 - [types](#Type)
 - [striver a to z questions](#striver-a-to-z-questions)
   
-## basic 
+# basic 
 * elements aranged in continuous memory 
 * elements are of same type 
 
