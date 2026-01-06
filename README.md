@@ -163,20 +163,57 @@ LR AND LC are usualy 0 .
 
 3 D
 Row major 
-Address(arr[i][j][k]) =  B + [ (i − LR) * (NC * ND) + (j − LC) * ND + (k − LD) ]
+Address(arr[i][j][k]) =  B + [ (i − LR) * (NC * ND) + (j − LC) * ND + (k − LD) ] x size 
 
 NC = UC − LC + 1   // number of columns 
 ND = UD − LD + 1   // number of depth 
 
 column major
-Address(arr[i][j][k]) = B + [ (k − LD) * (NR * NC) + (j − LC) * NR + (i − LR) ]
+Address(arr[i][j][k]) = B + [ (k − LD) * (NR * NC) + (j − LC) * NR + (i − LR) ] x size 
 
 NR = UR − LR + 1   // number of rows
 NC = UC − LC + 1   // number of columns
 
+```
+## sparse matrix 
+---
+* A **sparse matrix** is a matrix in which **most of the elements are 0**.
+* If a matrix of size **m × n** has **very few non-zero elements**, it is called a sparse matrix.
+
+* **Condition**
+* A matrix is sparse if:
+* Number of zero elements  >  Number of non-zero elements
+
+### Why use Sparse Matrix?
+
+* **Storage Efficiency**
+* Instead of storing all zeros, we store **only non-zero elements**.
+* This reduces **memory usage**.
+
+* **Faster Computation**
+* Operations are performed only on **non-zero elements**, saving time.
+
+---
+
+### Example
+Matrix (4 × 4):
 
 ```
+0 0 3 0
+0 0 0 8
+1 0 3 0
+0 0 7 0
+```
+---
 
+* **Drawback of Normal 2D Array Representation**
+* Storing sparse matrix in a 2D array wastes memory because **zeros occupy space but have no value**.
+
+* **Sparse Matrix Representation**
+* Instead of storing zeros, we store only **non-zero elements** using **triples**:
+
+> A sparse matrix stores mostly zero values, so memory and computation can be optimized by storing only non-zero elements using special representations.
+---
 
 ### striver a to z questions 
 
