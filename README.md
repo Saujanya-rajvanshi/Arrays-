@@ -6,6 +6,7 @@
 - [types](#Type)
 - [size of an array](#size-of-an-array)
 - [striver a to z questions](#striver-a-to-z-questions)
+- [sparse matrix](#sparse-matrix)
   
 # basic 
 * elements aranged in continuous memory 
