@@ -5,8 +5,8 @@
 - [ADT](#ADT)
 - [types](#Type)
 - [size of an array](#size-of-an-array)
-- [striver a to z questions](#striver-a-to-z-questions)
 - [sparse matrix](#sparse-matrix)
+- [striver a to z questions](#striver-a-to-z-questions)
   
 # basic 
 * elements aranged in continuous memory 
@@ -174,8 +174,10 @@ Address(arr[i][j][k]) = B + [ (k − LD) * (NR * NC) + (j − LC) * NR + (i − 
 
 NR = UR − LR + 1   // number of rows
 NC = UC − LC + 1   // number of columns
-
 ```
+
+---
+
 ## sparse matrix 
 ---
 * A **sparse matrix** is a matrix in which **most of the elements are 0**.
@@ -214,6 +216,8 @@ Matrix (4 × 4):
 * Instead of storing zeros, we store only **non-zero elements** using **triples**:
 
 > A sparse matrix stores mostly zero values, so memory and computation can be optimized by storing only non-zero elements using special representations.
+
+
 ---
 
 ### striver a to z questions 
