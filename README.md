@@ -266,7 +266,8 @@ return largest;
 //BETTER
 //check while traversing if the elem is largest than the largest aka 0 index and it  TC = O(2N)
 
-    int largest = ar[0];
+int largestElement(vector<int> &arr, int n) {
+int largest = arr[0];
     int secondLargest = -1;
 
     for (int i = 0; i < n; i++) {
@@ -281,6 +282,10 @@ return largest;
     }
 
     cout << "Second Largest: " << secondLargest;
+    cout << endl;
+
+return secondLargest;
+}
 ```
 
 ```cpp
@@ -288,40 +293,39 @@ return largest;
 #include <bits/stdc++.h>
 using namespace std;
 
-int secondLargest(vector<int> &a, int n) {
-    int largest = a[0];
-    int slargest = -1 // for all positives;
+int secondLargest(vector<int> &arr, int n) {
+    int largest = arr[0];
+    int slargest = -1; // for all positives;
                 // INT_MIN if array contains negatives
 
     for (int i = 1; i < n; i++) {
-        if (a[i] > largest) {
+        if (arr[i] > largest) {
             slargest = largest;
-            largest = a[i];
+            largest = arr[i];
         }
-        else if (a[i] < largest && a[i] > slargest) {
-            slargest = a[i];
+        else if (arr[i] < largest && arr[i] > slargest) {
+            slargest = arr[i];
         }
     }
 
-    return slargest;
+return slargest;
 
 //TC = O(N)
 }
 
-int secondSmallest(vector<int> &a, int n) {
-    int smallest = a[0];
+int secondSmallest(vector<int> &arr, int n) {
+    int smallest = arr[0];
     int ssmallest = INT_MAX;
 
     for (int i = 1; i < n; i++) {
-        if (a[i] < smallest) {
+        if (arr[i] < smallest) {
             ssmallest = smallest;
-            smallest = a[i];
+            smallest = arr[i];
         }
-        else if (a[i] != smallest && a[i] < ssmallest) {
-            ssmallest = a[i];
+        else if (arr[i] != smallest && arr[i] < ssmallest) {
+            ssmallest = arr[i];
         }
     }
-
     return ssmallest;
 //TC = O(N)
 }
@@ -338,12 +342,13 @@ int main() {
 ```
 ###### check sort 
 ```cpp
-for(i=0;i<n;i++){
-    if (ar[i] >= ar[i-1]{
-        cout << "array is sorted "
+bool check_sorted(const vector<int>& ar, int n) {
+    for (int i = 1; i < n; i++) {
+        if (ar[i] <= ar[i - 1]) {
+            return false;   // stop immediately
+        }
     }
-    else{
-        cout << "array is not sorted";
+    return true;
 }
 ```
 
