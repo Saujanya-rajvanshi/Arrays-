@@ -12,27 +12,23 @@
 * elements aranged in continuous memory 
 * elements are of same type 
 
-## 🔹 Array: Advantages & Disadvantages 
+## Array: Advantages & Disadvantages 
 
-### ✅ Advantages
+###  Advantages
 
-* ⚡ **Fast access** using index (O(1))
-* 🧩 **Simple to use & understand**
-* 📦 **Contiguous memory allocation**
-* 🚀 **Efficient for fixed-size data**
+*  **Fast access** using index (O(1))
+*  **Simple to use & understand**
+*  **Contiguous memory allocation**
+*  **Efficient for fixed-size data**
 
-### ❌ Disadvantages
+###  Disadvantages
 
-* 📏 **Fixed size** (cannot grow/shrink easily)
-* 🕳️ **Memory wastage** if size is overestimated
-* 🔄 **Insertion/Deletion is costly** (shifting needed)
-* 🧱 **Not suitable for dynamic data**
-
-⭐ **One-liner**:
-Arrays are fast and simple but lack flexibility.
-
-
-    
+*  **Fixed size** (cannot grow/shrink easily)
+*  **Memory wastage** if size is overestimated
+*  **Insertion/Deletion is costly** (shifting needed)
+*  **Not suitable for dynamic data**
+  
+---  
 ###### ADT
 ```cpp
 #include <iostream>
@@ -242,7 +238,7 @@ Matrix (4 × 4):
 - [kadanes algorithm maximum subarray sum](#kadanes-algorithm-maximum-subarray-sum)
 
 
-**#include <bits/stdc++.h>**
+### **#include <bits/stdc++.h>**
 #include <bits/stdc++.h> is a non-standard header that includes almost all standard C++ libraries at once.
 
 * It is mainly used in competitive programming.
@@ -253,7 +249,7 @@ So you don’t need to include each one separately.
 
 ## ❌ Libraries it does **NOT** include
 
-### 1️⃣ **Non-standard / compiler-specific headers**
+1. **Non-standard / compiler-specific headers**
 
 These are outside the C++ standard:
 
@@ -262,11 +258,11 @@ These are outside the C++ standard:
 * `<unistd.h>`
 * `<dos.h>`
 
-➡️ Reason: They are **OS/compiler specific**, not C++ STL.
+Reason: They are **OS/compiler specific**, not C++ STL.
 
 ---
 
-### 2️⃣ **C headers without `c` prefix (sometimes)**
+2. **C headers without `c` prefix (sometimes)**
 
 It includes:
 
@@ -282,18 +278,18 @@ But **not guaranteed** to include:
 
 ---
 
-### 3️⃣ **Graphics / GUI libraries**
+ 3. **Graphics / GUI libraries**
 
 * `<graphics.h>`
 * `<SFML/*>`
 * `<GL/gl.h>`
 * `<SDL.h>`
 
-➡️ These are **external libraries**, not STL.
+These are **external libraries**, not STL.
 
 ---
 
-### 4️⃣ **Threading / system-level libraries (sometimes missing)**
+4. **Threading / system-level libraries (sometimes missing)**
 
 May not reliably include:
 
@@ -306,7 +302,7 @@ May not reliably include:
 
 ---
 
-### 5️⃣ **Networking / modern C++ libs**
+5. **Networking / modern C++ libs**
 
 * `<asio>`
 * `<boost/*>` (Boost is external)
