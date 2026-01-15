@@ -438,6 +438,22 @@ void reverseVector(vector<int>& arr, int start, int end) {
 }
 ```
 
+### right rotate array upto d index
+```cpp
+vector<int> rightRotate(vector<int>& arr, int n) {
+    cout << "how many shifting : ";
+    int d;
+    cin >> d;
+    d = d % n;
+
+    reverse(arr.begin(), arr.begin() + d + 1);
+    reverse(arr.begin() + d + 1, arr.end());
+    reverse(arr.begin(), arr.end());
+
+return arr;
+}
+```
+
 ###### shift zeros to the last
 ```cpp
 vector<int> moveZeros(int n, vector<int> a) {
