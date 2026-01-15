@@ -405,43 +405,35 @@ return arr;
 }
 ```
 
-```
-TC = O(N)
-SC = O(1)
-```
-```cpp
-#include <bits/stdc++.h>
-#include <iostream>
-using namespace std;
-void leftRotate(int arr[], int n, int d){
-    reverse(arr, arr+d);
-    reverse(arr+d, arr+n) ;
-    reverse(arr, arr+n);
+---
+* **optimal approach**
+* TC = O(N)
+* SC = O(1)
 
-int main() {
-    int n;
-    cin >> n;
-    int arr[n];
-    for(int i = 0; i<n; i++) {
-        cin >> arr[i];
-    }
+
+```cpp
+vector<int> leftRotate(vector<int>& arr, int n) {
+    cout << "how many shifting : ";
     int d;
     cin >> d;
-    leftRotate(arr, n, d);
-    for(int i = 0;i<n; i++) {
-        cout << arr[i] << " ";
-    }
-    return 0;
+    d = d % n;
+
+    reverse(arr.begin(), arr.begin() + d);
+    reverse(arr.begin() + d, arr.end());
+    reverse(arr.begin(), arr.end());
+
+
+return arr;
 }
 ```
 ```cpp
-void Reverse(int arr[], int start, int end){
-    while (start <= end){
+void reverseVector(vector<int>& arr, int start, int end) {
+    while (start < end) {   // < is better than <=
         int temp = arr[start];
         arr[start] = arr[end];
         arr[end] = temp;
         start++;
-        end --;
+        end--;
     }
 }
 ```
