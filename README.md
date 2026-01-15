@@ -379,8 +379,10 @@ return arr;
 }
 ```
 ###### left rotate upto d index
-       TC = O(n+d)
-       SC = O(d)
+* TC = O(n+d)
+* SC = O(d)
+* **brute approach**
+
 ```cpp
 vector<int> leftRotate(vector<int>& arr, int n) {
     cout << "how many shifting : ";
