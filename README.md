@@ -217,7 +217,7 @@ Matrix (4 × 4):
 ---
 
 ### striver a to z questions 
-
+- [boiler plate code](#boiler-plate-code)
 - [find largest element](#largest-element)
 - [find second smallest largest ](#second-smallest-and-largest)
 - [chech if array is sorted](#check-sort)
@@ -237,7 +237,55 @@ Matrix (4 × 4):
 - [majority element n divide two](#majority-element-n-divide-two)
 - [kadanes algorithm maximum subarray sum](#kadanes-algorithm-maximum-subarray-sum)
 
+#### boiler plate code
+```cpp
+#include <bits/stdc++.h>
+#include <vector>
+using namespace std;
 
+// Function to find largest element
+
+
+// function for displaying array aftercalling function
+void display(const vector<int>& v) {
+    for (int x : v) {
+        cout << x << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    int n;
+    cout << "Enter size of array: ";
+    cin >> n;
+
+    vector<int> arr(n);
+    cout << "Enter array elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    // ---- Display array ----
+    cout << "Array elements : ";
+    for (int i = 0; i < n; i++) {
+         cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    // ---- Function call ----
+    vector<int> arrayanswer =  ; //function 
+    int answer = 0;
+
+    // ----- Display answer -----
+    cout << "answer to this question is : " << answer << "\n";
+
+    // ------ display function after call ------
+    cout << "array after call : ";
+    display(arrayanswer);
+
+    return 0;
+}
+```
 
 
 ###### largest element
@@ -455,44 +503,54 @@ return arr;
 ```
 
 ###### shift zeros to the last
-```cpp
-vector<int> moveZeros(int n, vector<int> a) {
+* **brute force**
+* TC = O(N)
+* SC = O(N)
 
-// step - 1
-vector<int> temp;
-for(int i = 0;i<n; i++) {
-    if(a[i] != ø) {
-        temp.push_back(a[i]);
-}
-// step - 2
-int nz = temp.size();
-for(int i = 0; i<nz; i++) {
-     a[i] = temp[i];
-}
-// step - 3
-for(int i = nz; i<n; i++) {
-    a[i] =0;
-}
+```cpp
+vector<int> moveZeros(int n, vector<int>& arr) {
+    // step 1: store non-zero elements
+    vector<int> temp;
+    for(int i = 0;i<n; i++) {
+        if (arr[i] != 0){
+            temp.push_back(arr[i]);
+        }
+    }
+    // step 2: copy back non-zeros
+    int nz = temp.size();
+    for(int i = 0; i<nz; i++) {
+        arr[i] = temp[i];
+    }
+
+    // step 3: fill remaining with zeros
+    for(int i = nz; i<n; i++) {
+        arr[i] =0;
+    }  
+return arr;
 }
 ```
+* **optimal approach**
+* TC = O(N)
+* SC = O(N)
 ```cpp
-vector<int> moveZeros(int n, vector<int> a) {
+vector<int> moveZeros(int n, vector<int> arr) {
     int j = -1;
     for(int i = 0;i<n; i++) {
-        if(a[i] == 0) {
+        if(arr[i] == 0) {
             j = i;
             break;
         }
     }
+    // no non zero numbers
+    if(j == -1) return arr;
 
-// no non zero numbers
-if(j == -1) return a;
-
-for(int i = j+1;i<n; i++) {
-    if(a[i] != 0) {
-        swap (a[i],a[j]);
-        j++;
+    for(int i = j+1;i<n; i++) {
+        if(arr[i] != 0) {
+            swap(arr[i],arr[j]);
+            j++;
+        }
     }
+return arr;
 }
 ```
 
