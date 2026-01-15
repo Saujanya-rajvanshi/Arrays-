@@ -588,19 +588,16 @@ SC = O(N1+N2) +O(N1+N2)
 ```
 
 ```cpp
-#include <bits/stdc++.h>
-using namespace std;
-
-vector<int> sortedArray(vector<int> a, vector<int> b) {
-
-    int n1 = a.size();
+vector<int> sortedArray(vector<int>& arr) {
+    vector<int> b;
+    int n1 = arr.size();
     int n2 = b.size();
 
     set<int> st;
 
     // insert elements of a
     for (int i = 0; i < n1; i++) {
-        st.insert(a[i]);
+        st.insert(arr[i]);
     }
 
     // insert elements of b
@@ -617,10 +614,10 @@ vector<int> sortedArray(vector<int> a, vector<int> b) {
     return temp;
 }
 ```
-```
-TC = O(N1 + N2)
-SC = O(N1 + N2) //not for the nswer but for the ans to return 
-```
+
+* TC = O(N1 + N2)
+* SC = O(N1 + N2) //not for the nswer but for the ans to return 
+
 ```cpp
 #include<bits/stdc++.h>
 vector < int > sortedArray(vector < int > a,
