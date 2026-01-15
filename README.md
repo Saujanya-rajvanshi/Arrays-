@@ -565,6 +565,22 @@ int linearSearch(int n, int num, vector<int> &arr) {
     return -1; // not found
 }
 ```
+* for testing
+```cpp
+int linearSearch(vector<int>& arr, int n ) {
+    cout << "enter no. to be found : ";
+    int num ;
+    cin >> num ;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == num) {
+            return i; // found
+        }
+    }
+    return -1; // not found
+}
+```
+
+
 ###### union array
 ```
 TC = O(N1log n + N2log n) + O(N1+N2)
