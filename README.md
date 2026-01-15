@@ -368,35 +368,38 @@ return i+1;
 
 ###### left rotate array
 ```cpp
-#include <bits/stdc++.h>
-vector<int> rotateArray(vector<int> &arr, int temp,i){
+vector<int> rotateArray(vector<int>& arr, int n){
     int temp = arr[0] ;
     for (int i = 1; i<n; i++) {
         arr[i-1] = arr[i];
     }
     arr[n-1] = temp;
-    return arr;
+
+return arr;
 }
 ```
 ###### left rotate upto d index
        TC = O(n+d)
        SC = O(d)
 ```cpp
-#include <bits/stdc++.h>
-#include <iostream>
-using namespace std;
-void leftRotate(int arr[], int n, int d) {
+vector<int> leftRotate(vector<int>& arr, int n) {
+    cout << "how many shifting : ";
+    int d;
+    cin >> d;
     d = d % n;
 
-    int temp [d];
+    vector<int> temp(d);
     for (int i = 0; i < d; i++){
-        temp [i] = arr[i];
+        temp [i] = arr[i]; // puting temprory elements 
     }
     for (int i = d; i < n; i++){
-        arr[i - d] = arr[i];
+        arr[i - d] = arr[i]; //shifting
     }
     for (int i = n - d; i < n; i++){
-        arr[i] = temp[i - (n-d)];
+        arr[i] = temp[i - (n-d)]; //pull back temp
+    }
+
+return arr;
 }
 ```
 
