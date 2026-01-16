@@ -226,7 +226,7 @@ Matrix (4 × 4):
 - [left rotate upto d index](#left-rotate-upto-d-index)
 - [shift zeros to the last](#shift-zeros-to-the-last)
 - [linear search](#linear-search)
-- [union of array](#union-array)
+- [union array of two sorted array](#union-array-of-two-sorted-array)
 - [intersection of array](#intersection-of-array)
 - [find missing number](#find-missing-number)
 - [maximum no. of consecutive ones](#maximum-no-of-consecutive-ones)
@@ -581,15 +581,14 @@ int linearSearch(vector<int>& arr, int n ) {
 ```
 
 
-###### union array
+###### union array of two sorted array
 ```
 TC = O(N1log n + N2log n) + O(N1+N2)
 SC = O(N1+N2) +O(N1+N2)
 ```
 
 ```cpp
-vector<int> sortedArray(vector<int>& arr) {
-    vector<int> b;
+vector<int> sortedArray(vector<int>& arr,vector<int>& b) {
     int n1 = arr.size();
     int n2 = b.size();
 
@@ -610,51 +609,52 @@ vector<int> sortedArray(vector<int>& arr) {
     for (auto it : st) {
         temp.push_back(it);
     }
-
+    
     return temp;
 }
+// this code can be used for unsorted array also as it is using set
 ```
+
+---
 
 * TC = O(N1 + N2)
 * SC = O(N1 + N2) //not for the nswer but for the ans to return 
 
 ```cpp
-#include<bits/stdc++.h>
-vector < int > sortedArray(vector < int > a,
-vector < int > b) {
+vector < int > sortedArray(vector < int > a,vector < int > b) {
     int n1 = a.size();
     int n2 = b.size();
     int i = 0;
     int j = 0;
-vector<int> unionArr;
-while(i<n1 && j < n2) {
-    if(a[i] <= b[j]) {
-        if(unionArr.size() == 0 | | unionArr.back() != a[i]) {
-            unionArr.push_back(a[i]);
-       }
-       i++;
+    vector<int> unionArr;
+    while(i<n1 && j < n2) {
+        if(a[i] <= b[j]) {
+            if(unionArr.size() == 0 || unionArr.back() != a[i]) {
+                unionArr.push_back(a[i]);
+            }
+            i++;
+        }
+        else {
+            if(unionArr.size() == 0 || unionArr.back() != b[j]) {
+                unionArr.push_back(b[j]);
+            }
+            j++;
+        }
     }
-    else {
-        if(unionArr.size() == 0 | | unionArr.back() != b[j]) {
+    
+    while(j<n2) {
+        if(unionArr.size() == 0 || unionArr.back () != b[j]) {
             unionArr.push_back(b[j]);
         }
         j++;
     }
-}
 
-while(j<n2) {
-    if(unionArr.size() == 0 | | unionArr.back () != b[j]) {
-        unionArr.push_back(b[j]);
+    while(i<n1) {
+        if(unionArr.size() == 0 || unionArr.back() != a[i]) {
+            unionArr.push_back(a[i]);
+        }
+        i++;
     }
-    j++;
-}
-
-while(i<n1) {
-    if(unionArr.size() == 0 | | unionArr.back() != a[i]) {
-        unionArr.push_back(a[i]);
-    }
-    i++:
-}
 
 return unionArr;
 }
