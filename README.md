@@ -713,21 +713,37 @@ vector<int> findArrayIntersection(vector<int> &A, int n,vector<int> &B, int m) {
 }
 ```
 ###### find missing number
-```
-TC = O(N)+O(N)
-SC = O(N)
-```
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
+* **brute force**
+* TC O(N*N)
+* SC =O(1)
 
-int main() {
-    int arr[] = {1, 2, 4, 5};
-    int N = 5;   // numbers are from 1 to N
-    int n = sizeof(arr) / sizeof(arr[0]);
+```cpp
+int missingNumber(vector<int>& arr, int n) {
+    for (int i = 1; i <= n; i++) {
+        int flag = 0;
+        for (int j = 0; j < n - 1; j++) {
+            if (arr[j] == i) {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0) return i;
+    }
+    return -1;
+}
+```
+---
+
+* **BETTER**
+* TC = O(N)+O(N)
+* SC = O(N)
+
+```cpp
+int missing_Number(vector<int>& arr,int n){
+    int N = n;
 
     // Step 1: Create hash array of size N+1 initialized with 0
-    vector<int> hashArr(N + 1, 0);
+    vector<int> hashArr(n + 1, 0);
 
     // Step 2: Mark elements present in arr
     for (int i = 0; i < n-1; i++) {
@@ -735,31 +751,23 @@ int main() {
     }
 
     // Step 3: Find the index which is still 0 → that's the missing number
+    int ans = 0;  
     for (int i = 1; i <= N; i++) {
         if (hashArr[i] == 0) {
-            cout << "Missing number = " << i;
-            return 0;
+            ans = i;
         }
     }
 
-    return 0;
+    return ans;
 }
 ```
-```
-TC = O(N)
-SC = O(1)
-```
+* **optimal**
+* TC = O(N)
+* SC = O(1)
+
 ```cpp
-//optimal aproach by sumation
-#include <bits/stdc++.h>
-using namespace std;
-
-int main() {
-    int arr[] = {1, 2, 3 ,4 ,5 ,6 ,8 ,9 ,10};
-    int N = 10;  // numbers should be from 1 to N
-
-    int n = sizeof(arr) / sizeof(arr[0]);
-
+int missing_Number(vector<int>& arr,int n){
+    int N = n + 1;
     // Step 1: Calculate expected sum of 1 to N
     int sum = N * (N + 1) / 2;
 
@@ -770,9 +778,9 @@ int main() {
     }
 
     // Step 3: Missing number = expected sum - actual sum
-    cout << "Missing number = " << (sum - s2);
+    int ans = (sum - s2);
 
-    return 0;
+    return ans ;
 }
 ```
 ```
