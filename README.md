@@ -807,15 +807,12 @@ int missing_Number(vector<int>& arr,int n){
 ```
 ###### maximum no. of consecutive ones
 ```cpp
-#include <bits/stdc++.h>
-using namespace std;
-
-int findMaxConsecutiveOnes(vector<int>& nums) {
+int findMaxConsecutiveOnes(vector<int>& arr) {
     int maxi = 0;
     int cnt = 0;
 
-    for (int i = 0; i < nums.size(); i++) {
-        if (nums[i] == 1) {
+    for (int i = 0; i < arr.size(); i++) {
+        if (arr[i] == 1) {
             cnt++;
             maxi = max(maxi, cnt);
         } else {
@@ -825,20 +822,11 @@ int findMaxConsecutiveOnes(vector<int>& nums) {
 
     return maxi;
 }
-
-int main() {
-    vector<int> nums = {1, 1, 0, 1, 1, 1};
-
-    cout << "Max consecutive ones = " << findMaxConsecutiveOnes(nums);
-
-    return 0;
-}
 ```
-###### find single number 
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
 
+###### find single number 
+* brute force 
+```cpp
 int singleNumber(vector<int>& arr) {
     int n = arr.size();
 
@@ -862,37 +850,19 @@ int singleNumber(vector<int>& arr) {
 
     return -1; // Not found (optional)
 }
-
-int main() {
-    vector<int> arr = {1, 2, 3, 2, 1};
-
-    cout << singleNumber(arr);
-
-    return 0;
-}
 ```
-```cpp
-//optimal solution
-#include <iostream>
-#include <vector>
-using namespace std;
 
-int getSingleElement(vector<int> &arr) {
+* optimal
+```cpp
+int singleNumber(vector<int> &arr) {
     int xorr = 0;
     for (int i = 0; i < arr.size(); i++) {
         xorr = xorr ^ arr[i];
     }
     return xorr;
 }
-
-int main() {
-    vector<int> arr = {2,6,1,3,4,5,7,8,9};
-
-    cout << getSingleElement(arr) << endl;
-
-    return 0;
-}
 ```
+
 ###### longest subarray with sum k
 ```cpp
 #include <bits/stdc++.h>
