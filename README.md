@@ -765,6 +765,7 @@ int missing_Number(vector<int>& arr,int n){
 * TC = O(N)
 * SC = O(1)
 
+* by sum method 
 ```cpp
 int missing_Number(vector<int>& arr,int n){
     int N = n + 1;
@@ -783,18 +784,14 @@ int missing_Number(vector<int>& arr,int n){
     return ans ;
 }
 ```
-```
+---
+* by XOR 
 TC = O(N)
 SC = O(1)
-```
-```cpp
-//optimal aproach by xor
-#include <bits/stdc++.h>
-using namespace std;
 
-int main() {
-    int arr[] = {1, 2, 4, 5};
-    int N = 5;
+```cpp
+int missing_Number(vector<int>& arr,int n){
+    int N = n +1;
 
     int xor1 = 0;
     for (int i = 1; i <= N; i++) {
@@ -805,9 +802,8 @@ int main() {
     for (int i = 0; i < N - 1; i++) {
         xor2 ^= arr[i];
     }
-
-    cout << "Missing number = " << (xor1 ^ xor2);
-    return 0;
+    int ans = (xor1 ^ xor2);
+    return ans;
 }
 ```
 ###### maximum no. of consecutive ones
