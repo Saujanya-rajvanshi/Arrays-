@@ -762,10 +762,9 @@ int missing_Number(vector<int>& arr,int n){
 }
 ```
 * **optimal**
-* TC = O(N)
-* SC = O(1)
-
-* by sum method 
+* by sum method
+TC = O(N) <br>
+SC = O(1)
 ```cpp
 int missing_Number(vector<int>& arr,int n){
     int N = n + 1;
@@ -786,7 +785,7 @@ int missing_Number(vector<int>& arr,int n){
 ```
 ---
 * by XOR 
-TC = O(N)
+TC = O(N) <br>
 SC = O(1)
 
 ```cpp
