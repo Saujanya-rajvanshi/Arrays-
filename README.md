@@ -785,6 +785,20 @@ int missing_Number(vector<int>& arr,int n){
 ```
 ---
 * by XOR <br>
+* xor is better than sum method as xor of all number will never excede big number <br>
+in programming XOR works bit-by-bit on integers, not just true/false. <br>
+xor1 = 1 ^ 2 ^ 3 ^ ... ^ N <br>
+xor2 = arr[0] ^ arr[1] ^ ... ^ arr[N-2] <br>
+ans = xor1 ^ xor2 <br>
+
+N = 5 <br>
+arr = {1, 2, 4, 5}   (3 is missing) <br>
+1 ^ 2 ^ 3 ^ 4 ^ 5 <br>
+1 ^ 2 ^ 4 ^ 5 <br>
+(1 ^ 2 ^ 3 ^ 4 ^ 5) ^ (1 ^ 2 ^ 4 ^ 5) <br>
+(1^1) ^ (2^2) ^ (4^4) ^ (5^5) ^ 3 <br>
+0 ^ 0 ^ 0 ^ 0 ^ 3 = 3 <br>
+
 TC = O(N) <br>
 SC = O(1)
 
@@ -805,7 +819,11 @@ int missing_Number(vector<int>& arr,int n){
     return ans;
 }
 ```
+
 ###### maximum no. of consecutive ones
+TC = O(N) <br>
+SC = O(1) <br>
+
 ```cpp
 int findMaxConsecutiveOnes(vector<int>& arr) {
     int maxi = 0;
@@ -852,7 +870,58 @@ int singleNumber(vector<int>& arr) {
 }
 ```
 
+* better
+```cpp
+// hashing can be used for negatives also but if the numbers are very big than not 
+int singleNumber(vector<int> &arr,int n) {
+    // Step 1: find maximum element
+    int maxi = *max_element(arr.begin(), arr.end());
+
+    // Step 2: create hash array
+    vector<int> hash(maxi + 1, 0);
+
+    // Step 3: mark presence
+    for (int i = 0; i < n; i++) {
+        hash[arr[i]]++;
+    }
+
+    // find element with frequency 1
+    for (int i = 0; i < n; i++) {
+        if (hash[arr[i]] == 1) {
+            return arr[i];
+        }
+    }
+
+    return -1;
+}
+```
+
+* replacing hash with **map** <br>
+* ordered map -> O(mlogn)
+* unordered map -> O(n) or O(n*n)
+
+```cpp
+int singleNumber(vector<int>& arr, int n) {
+    map<int, int> mpp;
+
+    // store frequency
+    for (int i = 0; i < arr.size(); i++) {
+        mpp[arr[i]]++;
+    }
+
+    // find element with frequency 1
+    for (auto it : mpp) {
+        if (it.second == 1) {
+            return it.first;
+        }
+    }
+
+    return -1;
+}
+```
+
 * optimal
+
 ```cpp
 int singleNumber(vector<int> &arr) {
     int xorr = 0;
