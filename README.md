@@ -843,6 +843,7 @@ int findMaxConsecutiveOnes(vector<int>& arr) {
 ```
 
 ###### find single number 
+* one number appearing once and other appearing twice
 * brute force 
 ```cpp
 int singleNumber(vector<int>& arr) {
