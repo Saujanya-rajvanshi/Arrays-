@@ -217,6 +217,7 @@ Matrix (4 × 4):
 ---
 
 ### striver a to z questions 
+#### EASY
 - [boiler plate code](#boiler-plate-code)
 - [find largest element](#largest-element)
 - [find second smallest largest ](#second-smallest-and-largest)
@@ -232,10 +233,15 @@ Matrix (4 × 4):
 - [maximum no. of consecutive ones](#maximum-no-of-consecutive-ones)
 - [find single number](#find-single-number)
 - [longest subarray with sum k](#longest-subarray-with-sum-k)
-- [two sum](#two-sum)
 - [sort an aaray of zeros ones wos](#sort-an-aaray-of-zeros-ones-twos)
 - [majority element n divide two](#majority-element-n-divide-two)
+
+#### MEDIUM 
+- [two sum](#two-sum)
 - [kadanes algorithm maximum subarray sum](#kadanes-algorithm-maximum-subarray-sum)
+
+
+#### HARD
 
 #### boiler plate code
 ```cpp
