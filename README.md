@@ -238,10 +238,37 @@ Matrix (4 × 4):
 
 #### MEDIUM 
 - [two sum](#two-sum)
+- [sort an array of 0's 1's and 2's](#sort-an-array-of-zeroes-ones-twoes)
+- [majority element(>n/2 times)](#majority-element-greater-than-n-by-two-times)
 - [kadanes algorithm maximum subarray sum](#kadanes-algorithm-maximum-subarray-sum)
-
+- [print subarray with maximum subarray sum (extended version of above problem)](#print-subarray-with-maximum-subarray-sum)
+- [stock buy and sell](#stock-by-and-sell)
+- [rearrange the array in alternating positive and negative items](#rearrange-the-array-in-alternating-positive-and-negative-items)
+- [next permutations](#next-permutations)
+- [leaders in an array problem](#leaders-in-an-array-problem)
+- [longest consecutive sequence in an array](#longest-consecutive-sequence-in-an-array)
+- [set matrix zeros](#set-matrix-zeros)
+- [rotate matrix by 90 degrees](#rotate-matrix-by-ninty-degrees)
+- [print the matrix in spiral manner](#print-the-matrix-in-spiral-manner)
+- [count subarrays with given sum](#count-subarrays-with-given-sum)
 
 #### HARD
+- [pascal's triangle](#pascals-triangle)
+- [majority element (n/3 times)](#majority-element-n-by-three-times)
+- [3-sum problem](#three-sum-problem)
+- [4-sum problem](#four-sum-problem)
+- [largest subarray with 0 sum](#largest-subarray-with-zero-sum)
+- [count number of subarrays with given xor k](#count-number-of-subarrays-with-given-xor-k)
+- [merge overlapping subintervals](#merge-overlapping-subintervals)
+- [merge two sorted arrays without extra space](#merge-two-sorted-arrays-without-extra-space)
+- [find the repeating and missing number](#find-the-repeating-and-missing-number)
+- [count inversions](#count-inversions)
+- [reverse pairs](#reverse-pairs)
+- [maximum product subarray](#maximum-product-subarray)
+
+
+
+## EASY
 
 #### boiler plate code
 ```cpp
@@ -294,7 +321,7 @@ int main() {
 ```
 
 
-###### largest element
+#### largest element
 ```cpp
 #include <bits/stdc++.h>
 largestElement(vector<int> &arr, int n) {
@@ -311,7 +338,7 @@ return largest;
 ```
 
 
-###### second smallest and largest 
+#### second smallest and largest 
 
 ```cpp
 //BRUTE
@@ -394,7 +421,8 @@ int main() {
     return 0;
 }
 ```
-###### check sort 
+
+#### check sort 
 ```cpp
 bool check_sorted(const vector<int>& ar, int n) {
     for (int i = 1; i < n; i++) {
@@ -406,7 +434,7 @@ bool check_sorted(const vector<int>& ar, int n) {
 }
 ```
 
-###### remove duplicate
+#### remove duplicate
 ```cpp
 int removeDuplicates(vector<int> &arr, int n) {
     int i = 0;
@@ -420,7 +448,7 @@ return i+1;
 }
 ```
 
-###### left rotate array
+#### left rotate array
 ```cpp
 vector<int> rotateArray(vector<int>& arr, int n){
     int temp = arr[0] ;
@@ -432,7 +460,7 @@ vector<int> rotateArray(vector<int>& arr, int n){
 return arr;
 }
 ```
-###### left rotate upto d index
+#### left rotate upto d index
 * TC = O(n+d)
 * SC = O(d)
 * **brute approach**
@@ -492,7 +520,7 @@ void reverseVector(vector<int>& arr, int start, int end) {
 }
 ```
 
-### right rotate array upto d index
+#### right rotate array upto d index
 ```cpp
 vector<int> rightRotate(vector<int>& arr, int n) {
     cout << "how many shifting : ";
@@ -508,7 +536,7 @@ return arr;
 }
 ```
 
-###### shift zeros to the last
+#### shift zeros to the last
 * **brute force**
 * TC = O(N)
 * SC = O(N)
@@ -560,7 +588,7 @@ return arr;
 }
 ```
 
-###### linear search
+#### linear search
 ```cpp
 int linearSearch(int n, int num, vector<int> &arr) {
     for (int i = 0; i < n; i++) {
@@ -587,7 +615,7 @@ int linearSearch(vector<int>& arr, int n ) {
 ```
 
 
-###### union array of two sorted array
+#### union array of two sorted array
 ```
 TC = O(N1log n + N2log n) + O(N1+N2)
 SC = O(N1+N2) +O(N1+N2)
@@ -666,7 +694,7 @@ return unionArr;
 }
 ```
 
-###### intersection of array
+#### intersection of array
 ```
 TC = O(N1 * N2)
 SC = O(N2) 
@@ -718,7 +746,7 @@ vector<int> findArrayIntersection(vector<int> &A, int n,vector<int> &B, int m) {
     return ans;
 }
 ```
-###### find missing number
+#### find missing number
 * **brute force**
 * TC O(N*N)
 * SC =O(1)
@@ -826,7 +854,7 @@ int missing_Number(vector<int>& arr,int n){
 }
 ```
 
-###### maximum no. of consecutive ones
+#### maximum no. of consecutive ones
 TC = O(N) <br>
 SC = O(1) <br>
 
@@ -848,7 +876,7 @@ int findMaxConsecutiveOnes(vector<int>& arr) {
 }
 ```
 
-###### find single number 
+#### find single number 
 * one number appearing once and other appearing twice
 * brute force 
 ```cpp
@@ -939,7 +967,7 @@ int singleNumber(vector<int> &arr) {
 }
 ```
 
-###### longest subarray with sum k
+#### longest subarray with sum k
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -1007,55 +1035,9 @@ int longestSubarrayWithSumK(vector<int> &a, long long k) {
     return maxLen;
 }
 ```
-###### two sum
-```cpp
-string read(int n, vector<int> &book, int target) {
-    map<int, int> mpp;
 
-    for(int i = 0; i < n; i++) {
-        int a = book[i];
-        int more = target - a;
 
-        // Check if the pair exists
-        if(mpp.find(more) != mpp.end()) {
-            return "YES";      // pair found
-            // return {mpp[more], i}; // if you want indexes
-        }
-
-        // store current number's index
-        mpp[a] = i;
-    }
-
-    return "NO";  // no pair found
-}
-
-```
-
-```cpp
-string read(int n, vector<int> book, int target) {
-
-    int left = 0, right = n - 1;
-    sort(book.begin(), book.end());
-
-    while(left < right) {
-        int sum = book[left] + book[right];
-
-        if(sum == target) {
-            return "YES";
-        }
-        else if(sum < target) {
-            left++;
-        }
-        else {
-            right--;
-        }
-    }
-
-    return "NO";
-}
-```
-
-###### sort an aaray of zeros ones twos
+#### sort an aaray of zeros ones twos
 algorithm
 ```cpp
 #include <bits/stdc++.h>
@@ -1080,7 +1062,7 @@ void sortArray(vector<int>& arr, int n) {
     }
 }
 ```
-###### majority element n divide two
+#### majority element n divide two
 algorithm
 ```cpp
 #include <bits/stdc++.h>
@@ -1135,7 +1117,59 @@ int majorityElement(vector<int>& v) {
 }
 ```
 
-### kadanes algorithm maximum subarray sum
+#### two sum
+```cpp
+string read(int n, vector<int> &book, int target) {
+    map<int, int> mpp;
+
+    for(int i = 0; i < n; i++) {
+        int a = book[i];
+        int more = target - a;
+
+        // Check if the pair exists
+        if(mpp.find(more) != mpp.end()) {
+            return "YES";      // pair found
+            // return {mpp[more], i}; // if you want indexes
+        }
+
+        // store current number's index
+        mpp[a] = i;
+    }
+
+    return "NO";  // no pair found
+}
+
+```
+
+```cpp
+string read(int n, vector<int> book, int target) {
+
+    int left = 0, right = n - 1;
+    sort(book.begin(), book.end());
+
+    while(left < right) {
+        int sum = book[left] + book[right];
+
+        if(sum == target) {
+            return "YES";
+        }
+        else if(sum < target) {
+            left++;
+        }
+        else {
+            right--;
+        }
+    }
+
+    return "NO";
+}
+```
+
+#### sort an array of-zeroes ones twoes
+
+#### majority element greater than n by two times
+
+#### kadanes algorithm maximum subarray sum
 ```cpp
 //brute aproach
 
@@ -1190,4 +1224,51 @@ for (int i = 0; i < n; i++) {
 
 ```
 
+#### print subarray with maximum subarray sum 
+
+#### stock by and sell
+
+#### rearrange the array in alternating positive and negative items
+
+#### next permutations
+
+#### leaders in an array problem
+
+#### longest consecutive sequence in an array
+
+#### set matrix zeros
+
+#### rotate matrix by ninty degrees
+
+#### print the matrix in spiral manner
+
+#### count subarrays with given sum
+
+
+
+## HARD
+
+#### pascals triangle
+
+#### majority element n by three times
+
+#### three sum problem
+
+#### four sum problem
+
+#### largest subarray with zero sum
+
+#### count number of subarrays with given xor k
+
+#### merge overlapping subintervals
+
+#### merge two sorted arrays without extra space
+
+#### find the repeating and missing number
+
+#### count inversions
+
+#### reverse pairs
+
+#### maximum product subarray
 
