@@ -1144,29 +1144,37 @@ for (int x : arrayanswer) {
     cout << arr[x] << " ";
 ```
 
+* **BETTER**
+TC = O(N log N) <br>
+SC = O(N)
+
 ```cpp
-string read(int n, vector<int> book, int target) {
+string twoSum(int n, vector<int>& arr) {
+    int target ;
+    cin >> target ;
+    map<int, int> mpp;
 
-    int left = 0, right = n - 1;
-    sort(book.begin(), book.end());
+    for (int i = 0; i < n; i++) {
+        int a = arr[i];
+        int more = target - a;
 
-    while(left < right) {
-        int sum = book[left] + book[right];
-
-        if(sum == target) {
+        if (mpp.find(more) != mpp.end()) {
             return "YES";
         }
-        else if(sum < target) {
-            left++;
-        }
-        else {
-            right--;
-        }
-    }
 
+        mpp[a] = i;
+    }
     return "NO";
 }
 ```
+
+```cpp
+string answer = twoSum(n, arr);
+    cout << answer;
+```
+
+* **OPTIMAL**
+
 
 #### sort an array of-zeroes ones twoes
 
