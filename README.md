@@ -1118,27 +1118,30 @@ int majorityElement(vector<int>& v) {
 ```
 
 #### two sum
+* **BRUTE**
+TC = O(N*N) <br>
+SC = O(1)
+
 ```cpp
-string read(int n, vector<int> &book, int target) {
-    map<int, int> mpp;
+vector<int> twoSum(vector<int>& arr, int n) {
+    int target;
+    cin >> target;       // target entered inside loop
 
-    for(int i = 0; i < n; i++) {
-        int a = book[i];
-        int more = target - a;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (i == j) continue;
 
-        // Check if the pair exists
-        if(mpp.find(more) != mpp.end()) {
-            return "YES";      // pair found
-            // return {mpp[more], i}; // if you want indexes
+            if (arr[i] + arr[j] == target) {
+                return {i, j};
+            }
         }
-
-        // store current number's index
-        mpp[a] = i;
     }
-
-    return "NO";  // no pair found
+    return {-1, -1};
 }
-
+```
+```cpp
+for (int x : arrayanswer) {
+    cout << arr[x] << " ";
 ```
 
 ```cpp
