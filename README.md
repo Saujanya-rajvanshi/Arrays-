@@ -1174,6 +1174,29 @@ string answer = twoSum(n, arr);
 ```
 
 * **OPTIMAL**
+```cpp
+string twoSum(int n, vector<int> arr) {
+    int target;
+    cin >> target ;
+    int left = 0, right = n - 1;
+
+    sort(arr.begin(), arr.end());
+
+    while (left < right) {
+        int sum = arr[left] + arr[right];
+
+        if (sum == target) {
+            return "YES";
+        } else if (sum < target) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+
+    return "NO";
+}
+```
 
 
 #### sort an array of-zeroes ones twoes
