@@ -969,10 +969,11 @@ int singleNumber(vector<int> &arr) {
 
 #### longest subarray with sum k
 ```cpp
-#include <bits/stdc++.h>
-using namespace std;
-
-int longestSubarrayWithSumK(vector<int> &a, long long k) {
+// int longestSubarrayWithSumK(vector<int> &a, int k) {
+int longestSubarrayWithSumK(vector<int> &a, int n) {
+    int k ;
+    cout << "what sum do you want : ";
+    cin >> k ;
 
     map<long long, int> preSumMap;
     long long sum = 0;
@@ -1003,6 +1004,7 @@ int longestSubarrayWithSumK(vector<int> &a, long long k) {
     return maxLen;
 }
 ```
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
