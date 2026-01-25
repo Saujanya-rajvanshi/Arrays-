@@ -968,6 +968,9 @@ int singleNumber(vector<int> &arr) {
 ```
 
 #### longest subarray with sum k
+* **BRUTE**
+* TC = O()
+* SC = O()
 ```cpp
 // int longestSubarrayWithSumK(vector<int> &a, int k) {
 int longestSubarrayWithSumK(vector<int> &a, int n) {
@@ -1005,6 +1008,9 @@ int longestSubarrayWithSumK(vector<int> &a, int n) {
 }
 ```
 
+* **BETTER**
+* TC = O()
+* SC = O()
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -1038,9 +1044,45 @@ int longestSubarrayWithSumK(vector<int> &a, long long k) {
 }
 ```
 
+* **OPTIMAL**
+* TC = O()
+* SC = O()
+
 
 #### sort an aaray of zeros ones twos
-algorithm
+* **BRUTE**
+* TC = O(n log n)
+* SC = O(n)
+```cpp
+merge sort
+```
+
+* **BETTER**
+* TC = O(n)
+* SC = O(1)
+```cpp
+vector<int> sort012(vector<int> arr) {
+    int cnt0 = 0, cnt1 = 0, cnt2 = 0;
+
+    // count 0s, 1s, and 2s
+    for (int x : arr) {
+        if (x == 0) cnt0++;
+        else if (x == 1) cnt1++;
+        else cnt2++;
+    }
+
+    // overwrite array
+    int i = 0;
+    while (cnt0--) arr[i++] = 0;
+    while (cnt1--) arr[i++] = 1;
+    while (cnt2--) arr[i++] = 2;
+
+    return arr;
+}
+```
+* **OPTIMAL**
+* TC = O(n)
+* SC = O(1)
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -1064,6 +1106,7 @@ void sortArray(vector<int>& arr, int n) {
     }
 }
 ```
+
 #### majority element n divide two
 algorithm
 ```cpp
