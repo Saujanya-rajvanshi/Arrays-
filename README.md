@@ -233,8 +233,6 @@ Matrix (4 × 4):
 - [maximum no. of consecutive ones](#maximum-no-of-consecutive-ones)
 - [find single number](#find-single-number)
 - [longest subarray with sum k](#longest-subarray-with-sum-k)
-- [sort an aaray of zeros ones wos](#sort-an-aaray-of-zeros-ones-twos)
-- [majority element n divide two](#majority-element-n-divide-two)
 
 #### MEDIUM 
 - [two sum](#two-sum)
