@@ -1244,6 +1244,70 @@ string twoSum(int n, vector<int> arr) {
 
 #### sort an array of-zeroes ones twoes
 
+* **BRUTE**
+MERGE sort
+TC = O(N log N) <br>
+SC = O(N)
+
+* **BETTER**
+TC = O(2N) <br>
+SC = O(1)
+```cpp
+void sortArray(int arr[], int n)
+{
+    int cnt0 = 0, cnt1 = 0, cnt2 = 0;
+
+    // Count 0s, 1s, 2s
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == 0) cnt0++;
+        else if (arr[i] == 1) cnt1++;
+        else cnt2++;
+    }
+
+    // Overwrite array
+    int i = 0;
+    for (; i < cnt0; i++)
+        arr[i] = 0;
+
+    for (; i < cnt0 + cnt1; i++)
+        arr[i] = 1;
+
+    for (; i < n; i++)
+        arr[i] = 2;
+}
+```
+
+* **OPTIMAL**
+TC = O(N) <br>
+SC = O(1)
+
+* Dutch national algorithm 
+<img width="814" height="481" alt="image" src="https://github.com/user-attachments/assets/b0c813e3-71bf-4b82-b65f-ef8a6770e1e0" />
+
+```cpp
+void sortArray(vector<int>& arr, int n)
+{
+    int low = 0, mid = 0, high = n - 1;
+
+    while (mid <= high) {
+        if (arr[mid] == 0) {
+            swap(arr[low], arr[mid]);
+            low++;
+            mid++;
+        }
+        else if (arr[mid] == 1) {
+            mid++;
+        }
+        else { // arr[mid] == 2
+            swap(arr[mid], arr[high]);
+            high--;
+        }
+    }
+}
+```
+
+
+
 #### majority element greater than n by two times
 
 #### kadanes algorithm maximum subarray sum
