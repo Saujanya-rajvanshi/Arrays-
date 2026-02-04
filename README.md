@@ -1306,9 +1306,69 @@ void sortArray(vector<int>& arr, int n)
 }
 ```
 
-
-
 #### majority element greater than n by two times
+* **BRUTE**
+TC = O(N*N) <br>
+iterate and count through the array
+
+* **BETTER**
+TC = O(N log N) + O(N) <br>
+SC = O(N)
+```cpp
+int majorityElement(vector<int>& arr)
+{
+    map<int, int> mpp;
+
+    for (int i = 0; i < arr.size(); i++) {
+        mpp[arr[i]]++;
+    }
+
+    for (auto it : mpp) {
+        if (it.second > arr.size() / 2)
+            return it.first;
+    }
+
+    return -1;
+}
+```
+
+* **OPTIMAL**
+TC = O(N) <br>
+SC = O(1)
+* moores voting algorithm
+```cpp
+int majorityElement(vector<int>& arr)
+{
+    int cnt = 0;
+    int el = 0;
+
+    // Step 1: Find potential candidate
+    for (int i = 0; i < arr.size(); i++) {
+        if (cnt == 0) {
+            cnt = 1;
+            el = arr[i];
+        }
+        else if (arr[i] == el) {
+            cnt++;
+        }
+        else {
+            cnt--;
+        }
+    }
+
+    // Step 2: Verify candidate
+    int cnt1 = 0;
+    for (int i = 0; i < arr.size(); i++) {
+        if (arr[i] == el)
+            cnt1++;
+    }
+
+    if (cnt1 > arr.size() / 2)
+        return el;
+
+    return -1;
+}
+```
 
 #### kadanes algorithm maximum subarray sum
 ```cpp
@@ -1365,11 +1425,98 @@ for (int i = 0; i < n; i++) {
 
 ```
 
-#### print subarray with maximum subarray sum 
-
-#### stock by and sell
-
 #### rearrange the array in alternating positive and negative items
+* **BETTER**
+TC = O(N) + O(N) = O(2N)<br>
+SC = O(N)
+```cpp
+void rearrangeBySign(vector<int>& arr)
+{
+    int n = arr.size();
+    vector<int> pos, neg;
+
+    // Separate positives and negatives
+    for (int i = 0; i < n; i++) {
+        if (arr[i] >= 0)
+            pos.push_back(arr[i]);
+        else
+            neg.push_back(arr[i]);
+    }
+
+    // Place alternately: +ve at even index, -ve at odd index
+    for (int i = 0; i < n / 2; i++) {
+        arr[2 * i]     = pos[i];
+        arr[2 * i + 1] = neg[i];
+    }
+}
+```
+
+* **OPTIMAL**
+TC = O(2N) <br>
+SC = O(N)
+```cpp
+    vector<int> rearrangeArray(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> ans(n);
+
+        int posIndex = 0, negIndex = 1;
+
+        for (int i = 0; i < n; i++) {
+            if (nums[i] < 0) {
+                ans[negIndex] = nums[i];
+                negIndex += 2;
+            } else {
+                ans[posIndex] = nums[i];
+                posIndex += 2;
+            }
+        }
+
+        return ans;
+    }
+```
+
+* **2nd variety**
+* if the positive and negative no. are not in qual number than add the left element without altering the order
+```cpp
+vector<int> alternateNumbers(vector<int>& a)
+{
+    vector<int> pos, neg;
+    int n = a.size();
+
+    // Separate positives and negatives
+    for (int i = 0; i < n; i++) {
+        if (a[i] > 0)
+            pos.push_back(a[i]);
+        else
+            neg.push_back(a[i]);
+    }
+
+    // If positives are more
+    if (pos.size() > neg.size()) {
+        for (int i = 0; i < neg.size(); i++) {
+            a[2 * i]     = pos[i];
+            a[2 * i + 1] = neg[i];
+        }
+        int index = neg.size() * 2;
+        for (int i = neg.size(); i < pos.size(); i++) {
+            a[index++] = pos[i];
+        }
+    }
+    // If negatives are more or equal
+    else {
+        for (int i = 0; i < pos.size(); i++) {
+            a[2 * i]     = pos[i];
+            a[2 * i + 1] = neg[i];
+        }
+        int index = pos.size() * 2;
+        for (int i = pos.size(); i < neg.size(); i++) {
+            a[index++] = neg[i];
+        }
+    }
+
+    return a;
+}
+```
 
 #### next permutations
 
@@ -1384,6 +1531,7 @@ for (int i = 0; i < n; i++) {
 #### print the matrix in spiral manner
 
 #### count subarrays with given sum
+
 
 
 
