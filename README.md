@@ -1519,8 +1519,112 @@ vector<int> alternateNumbers(vector<int>& a)
 ```
 
 #### next permutations
+* **BRUTE**
+TC = O(N!*N) <br>
+
+```
+generate all the permutations in sorted by recursion
+find where the input permutation lies
+next perm is your answer
+```
+
+* **BETTER**
+TC = O(2N) <br>
+SC = O(1)
+using stl library
+
+```cpp
+vector<int> nextGreaterPermutation(vector<int> &A){
+    next_permutation(A.begin(), A.end( ));
+return A;
+}
+```
+
+
+* **OPTIMAL**
+TC = O(3N) <br>
+SC = O(1) can be O(n)
+```cpp
+vector<int> nextGreaterPermutation(vector<int> &A) {
+    int ind = -1;
+    int n = A.size();
+
+    for(int i = n - 2; i >= 0; i--) {
+        if(A[i] < A[i + 1]) {
+            ind = i;
+            break;
+        }
+    }
+
+    if(ind == -1) {
+        reverse(A.begin(), A.end());
+        return A;
+    }
+
+    for(int i = n - 1; i > ind; i--) {
+        if(A[i] > A[ind]) {
+            swap(A[i], A[ind]);
+            break;
+        }
+    }
+
+    reverse(A.begin() + ind + 1, A.end());
+    return A;
+}
+```
 
 #### leaders in an array problem
+* **BRUTE**
+TC = O(2N) <br>
+SC = O(N)
+```cpp
+vector<int> leadersInArray(vector<int> &arr) {
+    int n = arr.size();
+    vector<int> leaders;
+
+    for(int i = 0; i < n; i++) {
+        bool leader = true;
+
+        for(int j = i + 1; j < n; j++) {
+            if(arr[j] > arr[i]) {
+                leader = false;
+                break;
+            }
+        }
+
+        if(leader) {
+            leaders.push_back(arr[i]);
+        }
+    }
+
+    return leaders;
+}
+```
+
+* **OPTIMAL**
+TC = O(2N) <br>
+SC = O(1)
+```cpp
+vector<int> leadersInArray(vector<int>& a) {
+    // O(N)
+    vector<int> ans;
+    int maxi = INT_MIN;
+    int n = a.size();
+
+    // O(N)
+    for(int i = n - 1; i >= 0; i--) {
+        if(a[i] > maxi) {
+            ans.push_back(a[i]);
+        }
+        // keep track of right max
+        maxi = max(maxi, a[i]);
+    }
+
+    // O(N log N)
+    sort(ans.begin(), ans.end());
+    return ans;
+}
+```
 
 #### longest consecutive sequence in an array
 
