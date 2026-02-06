@@ -1627,6 +1627,78 @@ vector<int> leadersInArray(vector<int>& a) {
 ```
 
 #### longest consecutive sequence in an array
+* **BRUTE**
+TC = O() <br>
+SC = O()
+TRAVERSE THE ARRA MULTIPLE TIMES AND CHECK FOR THE consecutive terms
+
+* **BETTER**
+TC = O(N log N) <br>
+SC = O(1)
+```cpp
+int longestSuccessiveElements(vector<int>& nums) {
+    if(nums.size() == 0) return 0;
+
+    sort(nums.begin(), nums.end());
+
+    int n = nums.size();
+    int lastSmaller = INT_MIN;
+    int cnt = 0;
+    int longest = 1;
+
+    for(int i = 0; i < n; i++) {
+        if(nums[i] - 1 == lastSmaller) {
+            cnt += 1;
+            lastSmaller = nums[i];
+        }
+        else if(nums[i] != lastSmaller) {
+            cnt = 1;
+            lastSmaller = nums[i];
+        }
+
+        longest = max(longest, cnt);
+    }
+
+    return longest;
+}
+```
+
+* **OPTIMAL**
+TC = O(2N) <br>
+SC = O(1)
+<br>
+only for some constraints
+
+```cpp
+int longestSuccessiveElements(vector<int>& a) {
+    int n = a.size();
+    if(n == 0) return 0;
+
+    unordered_set<int> st;
+    for(int i = 0; i < n; i++) {
+        st.insert(a[i]);
+    }
+
+    int longest = 1;
+
+    for(auto it : st) {
+        // start only if it is the beginning of a sequence
+        if(st.find(it - 1) == st.end()) {
+            int cnt = 1;
+            int x = it;
+
+            while(st.find(x + 1) != st.end()) {
+                x = x + 1;
+                cnt = cnt + 1;
+            }
+
+            longest = max(longest, cnt);
+        }
+    }
+
+    return longest;
+}
+```
 
 #### set matrix zeros
 
