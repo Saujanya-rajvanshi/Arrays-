@@ -1270,52 +1270,54 @@ TC = O(N log N) <br>
 SC = O(N)
 
 ```cpp
-string twoSum(int n, vector<int>& arr) {
-    int target ;
-    cin >> target ;
-    map<int, int> mpp;
+vector<int> twoSum(vector<int>& nums, int target) {
+    unordered_map<int, int> mp;
 
-    for (int i = 0; i < n; i++) {
-        int a = arr[i];
-        int more = target - a;
+    for (int i = 0; i < nums.size(); i++) {
+        int rem = target - nums[i];
 
-        if (mpp.find(more) != mpp.end()) {
-            return "YES";
+        if (mp.find(rem) != mp.end()) {
+            return {mp[rem], i};
         }
 
-        mpp[a] = i;
+        mp[nums[i]] = i;
     }
-    return "NO";
+
+    return {};
 }
 ```
 
-```cpp
-string answer = twoSum(n, arr);
-    cout << answer;
-```
-
 * **OPTIMAL**
+* TC =  O(n log n)
+* SC =  O(1) extra space (ignoring sorting stack space) <BR>
+O(log n) if considering internal sort recursion
+
 ```cpp
-string twoSum(int n, vector<int> arr) {
-    int target;
-    cin >> target ;
-    int left = 0, right = n - 1;
+vector<int> twoSumIndices(vector<int>& nums, int target) {
+    int n = nums.size();
+
+    vector<pair<int,int>> arr;
+    for (int i = 0; i < n; i++) {
+        arr.push_back({nums[i], i});
+    }
 
     sort(arr.begin(), arr.end());
 
+    int left = 0, right = n - 1;
+
     while (left < right) {
-        int sum = arr[left] + arr[right];
+        int sum = arr[left].first + arr[right].first;
 
         if (sum == target) {
-            return "YES";
-        } else if (sum < target) {
-            left++;
-        } else {
-            right--;
+            return {arr[left].second, arr[right].second};
         }
+        else if (sum < target)
+            left++;
+        else
+            right--;
     }
 
-    return "NO";
+    return {};
 }
 ```
 
