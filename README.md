@@ -1702,38 +1702,348 @@ int longestSuccessiveElements(vector<int>& a) {
 
 #### set matrix zeros
 
+* **BRUTE**
+TC = O((N*M)*(N+M)+(N*M)) <br>
+SC = O(1)
+```cpp
+void setZeroes(vector<vector<int>>& matrix) {
+    int n = matrix.size();
+    int m = matrix[0].size();
+
+    // Step 1: Mark rows and columns
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (matrix[i][j] == 0) {
+
+                // mark row i
+                for (int col = 0; col < m; col++) {
+                    if (matrix[i][col] != 0)
+                        matrix[i][col] = -1;
+                }
+
+                // mark column j
+                for (int row = 0; row < n; row++) {
+                    if (matrix[row][j] != 0)
+                        matrix[row][j] = -1;
+                }
+            }
+        }
+    }
+
+    // Step 2: Convert -1 to 0
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (matrix[i][j] == -1)
+                matrix[i][j] = 0;
+        }
+    }
+}
+```
+
+* **BETTER**
+TC = O(2*n*m) <br>
+SC = O(n+m)
+```cpp
+vector<vector<int>> zeroMatrix(vector<vector<int>> &matrix, int n, int m) {
+    vector<int> row(n, 0);
+    vector<int> col(m, 0);
+
+    // Step 1: Mark rows and columns
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (matrix[i][j] == 0) {
+                row[i] = 1;
+                col[j] = 1;
+            }
+        }
+    }
+
+    // Step 2: Set matrix elements to 0
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (row[i] == 1 || col[j] == 1) {
+                matrix[i][j] = 0;
+            }
+        }
+    }
+
+    return matrix;
+}
+```
+
+* **0PTIMAL**
+TC = O(n*m) <br>
+SC = O(1)
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<vector<int>> zeroMatrix(vector<vector<int>> &matrix, int n, int m) {
+    int col0 = 1;
+
+    // Step 1: Mark first row & column
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (matrix[i][j] == 0) {
+                matrix[i][0] = 0;   // mark row
+                if (j != 0)
+                    matrix[0][j] = 0; // mark column
+                else
+                    col0 = 0; // first column case
+            }
+        }
+    }
+
+    // Step 2: Update matrix excluding first row & column
+    for (int i = 1; i < n; i++) {
+        for (int j = 1; j < m; j++) {
+            if (matrix[i][0] == 0 || matrix[0][j] == 0) {
+                matrix[i][j] = 0;
+            }
+        }
+    }
+
+    // Step 3: Handle first row
+    if (matrix[0][0] == 0) {
+        for (int j = 0; j < m; j++)
+            matrix[0][j] = 0;
+    }
+
+    // Step 4: Handle first column
+    if (col0 == 0) {
+        for (int i = 0; i < n; i++)
+            matrix[i][0] = 0;
+    }
+
+    return matrix;
+}
+```
+
 #### rotate matrix by ninty degrees
+* **BRUTE**
+TC = O(N*N) <BR>
+SC = O(N*N)
+```cpp
+vector<vector<int>> rotateMatrix(vector<vector<int>> &matrix, int n) {
+    vector<vector<int>> ans(n, vector<int>(n));
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            ans[j][n - 1 - i] = matrix[i][j];
+        }
+    }
+
+    return ans;
+}
+```
+
+* **0PTIMAL**
+TC = O(N*N) <br>
+SC = O(1)
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+void rotateMatrix(vector<vector<int>> &mat) {
+    int n = mat.size();
+
+    // Step 1: Transpose
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            swap(mat[i][j], mat[j][i]);
+        }
+    }
+
+    // Step 2: Reverse each row
+    for (int i = 0; i < n; i++) {
+        reverse(mat[i].begin(), mat[i].end());
+    }
+}
+```
 
 #### print the matrix in spiral manner
+* **BRUTE**
+TC = O() <br>
+SC = O()
+
+* **BETTER**
+TC = O() <br>
+SC = O()
+
+* **0PTIMAL**
+TC = O() <br>
+SC = O()
 
 #### count subarrays with given sum
+* **BRUTE**
+TC = O() <br>
+SC = O()
 
+* **BETTER**
+TC = O() <br>
+SC = O()
+
+* **0PTIMAL**
+TC = O() <br>
+SC = O()
 
 
 
 ## HARD
 
 #### pascals triangle
+* **BRUTE**
+TC = O() <br>
+SC = O()
+
+* **BETTER**
+TC = O() <br>
+SC = O()
+
+* **0PTIMAL**
+TC = O() <br>
+SC = O()
 
 #### majority element n by three times
+* **BRUTE**
+TC = O() <br>
+SC = O()
+
+* **BETTER**
+TC = O() <br>
+SC = O()
+
+* **0PTIMAL**
+TC = O() <br>
+SC = O()
 
 #### three sum problem
+* **BRUTE**
+TC = O() <br>
+SC = O()
+
+* **BETTER**
+TC = O() <br>
+SC = O()
+
+* **0PTIMAL**
+TC = O() <br>
+SC = O()
 
 #### four sum problem
+* **BRUTE**
+TC = O() <br>
+SC = O()
+
+* **BETTER**
+TC = O() <br>
+SC = O()
+
+* **0PTIMAL**
+TC = O() <br>
+SC = O()
 
 #### largest subarray with zero sum
+* **BRUTE**
+TC = O() <br>
+SC = O()
+
+* **BETTER**
+TC = O() <br>
+SC = O()
+
+* **0PTIMAL**
+TC = O() <br>
+SC = O()
 
 #### count number of subarrays with given xor k
+* **BRUTE**
+TC = O() <br>
+SC = O()
+
+* **BETTER**
+TC = O() <br>
+SC = O()
+
+* **0PTIMAL**
+TC = O() <br>
+SC = O()
 
 #### merge overlapping subintervals
+* **BRUTE**
+TC = O() <br>
+SC = O()
+
+* **BETTER**
+TC = O() <br>
+SC = O()
+
+* **0PTIMAL**
+TC = O() <br>
+SC = O()
 
 #### merge two sorted arrays without extra space
+* **BRUTE**
+TC = O() <br>
+SC = O()
+
+* **BETTER**
+TC = O() <br>
+SC = O()
+
+* **0PTIMAL**
+TC = O() <br>
+SC = O()
 
 #### find the repeating and missing number
+* **BRUTE**
+TC = O() <br>
+SC = O()
+
+* **BETTER**
+TC = O() <br>
+SC = O()
+
+* **0PTIMAL**
+TC = O() <br>
+SC = O()
 
 #### count inversions
+* **BRUTE**
+TC = O() <br>
+SC = O()
+
+* **BETTER**
+TC = O() <br>
+SC = O()
+
+* **0PTIMAL**
+TC = O() <br>
+SC = O()
 
 #### reverse pairs
+* **BRUTE**
+TC = O() <br>
+SC = O()
+
+* **BETTER**
+TC = O() <br>
+SC = O()
+
+* **0PTIMAL**
+TC = O() <br>
+SC = O()
+
 
 #### maximum product subarray
+* **BRUTE**
+TC = O() <br>
+SC = O()
 
+* **BETTER**
+TC = O() <br>
+SC = O()
+
+* **0PTIMAL**
+TC = O() <br>
+SC = O()
