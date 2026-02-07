@@ -1902,12 +1902,12 @@ vector<vector<int>> zeroMatrix(vector<vector<int>> &matrix, int n, int m) {
 TC = O(N x N) <BR>
 SC = O(N x N)
 ```cpp
-vector<vector<int>> rotateMatrix(vector<vector<int>> &matrix, int n) {
+vector<vector<int>> rotateMatrix(vector<vector<int>> &mat, int n) {
     vector<vector<int>> ans(n, vector<int>(n));
 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            ans[j][n - 1 - i] = matrix[i][j];
+            ans[j][n - 1 - i] = mat[i][j];
         }
     }
 
