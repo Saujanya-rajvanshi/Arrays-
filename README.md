@@ -121,20 +121,68 @@ void display(int *ar) {
 ```
 
 #### type 
----
+## Types of Arrays
+* **One-Dimensional Array (1D)** – A linear array that stores elements in a single row using one index.
+```cpp
+int arr[5] = {1, 2, 3, 4, 5};
+```
 
-## 🔷 Types of Arrays
+* **Two-Dimensional Array (2D)** – An array of arrays arranged in rows and columns, accessed using two indices.
+```cpp
+int arr[3][4] = {
+    {1, 2, 3, 4},
+    {5, 6, 7, 8},
+    {9, 10, 11, 12}
+};
+```
 
-#### 🔹 1. One-Dimensional Array (1D)
-#### 🔹 2. Two-Dimensional Array (2D)
-#### 🔹 3. Multi-Dimensional Array
-#### 🔹 4. Static Array
-#### 🔹 5. Dynamic Array
-#### 🔹 6. Jagged Array
-      * Array of arrays with **unequal sizes**
-      * Supported using pointers / vectors
-     
----
+* **Multi-Dimensional Array** – An array with more than two dimensions, used for complex data representation.
+```cpp
+int arr[2][3][4];   // 3D array
+```
+
+* **Static Array** – An array whose size is fixed at compile time and cannot be changed. 
+```cpp
+int arr[5] = {1, 2, 3, 4, 5};
+```
+
+* **Dynamic Array** – An array whose size can be changed at runtime using heap memory. <br>
+**Using `new`**
+
+```cpp
+int n;
+cin >> n;
+int* arr = new int[n];
+```
+
+**Using `vector` (recommended)**
+
+```cpp
+vector<int> arr;
+arr.push_back(10);
+```
+
+* **Jagged Array** – An array of arrays where each inner array can have a different size, implemented using pointers or vectors. <br>
+
+**Using pointers**
+
+```cpp
+int* arr[3];
+arr[0] = new int[2];
+arr[1] = new int[4];
+arr[2] = new int[3];
+```
+
+**Using vector (easy & safe)**
+
+```cpp
+vector<vector<int>> arr = {
+    {1, 2},
+    {3, 4, 5, 6},
+    {7, 8, 9}
+};
+```
+
 ---
 
 ## size of an array
