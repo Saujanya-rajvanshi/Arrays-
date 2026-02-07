@@ -8,7 +8,7 @@
 - [sparse matrix](#sparse-matrix)
 - [striver a to z questions](#striver-a-to-z-questions)
   
-# basic 
+# Basic 
 * elements aranged in continuous memory 
 * elements are of same type 
 
