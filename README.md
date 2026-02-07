@@ -272,6 +272,7 @@ Matrix (4 × 4):
 
 ### striver a to z questions 
 #### EASY
+- [boiler plate](#boiler-plate)
 - [find largest element](#largest-element)
 - [find second smallest largest ](#second-smallest-and-largest)
 - [chech if array is sorted](#check-sort)
@@ -320,6 +321,81 @@ Matrix (4 × 4):
 
 
 ## EASY
+
+#### boiler plate
+```cpp
+#include <bits/stdc++.h>
+#include <vector>
+using namespace std;
+
+// Function to find largest element
+
+
+
+// -------displaying 1D array --------
+void display(const vector<int>& arr) {
+   if (arr.empty()) {
+       cout << "Vector is empty\n";
+       return;
+   }
+   for (int x : arr) {
+       cout << x << " ";
+   }
+   cout << endl;
+}
+
+//----display 2D Array----
+// void displayMatrix(const vector<vector<int>> &mat) {
+//     for (auto &row : mat) {
+//         for (int val : row) {
+//             cout << val << " ";
+//         }
+//         cout << endl;
+//     }
+// }
+
+
+int main() {
+    int n;
+    cout << "Enter size of array: ";
+    cin >> n;
+
+    //---- inputing 1D array ---
+    vector<int> arr(n);
+    cout << "Enter array elements: ";
+    for (int i = 0; i < n; i++) {
+       cin >> arr[i];
+    }
+
+    //--- inputing 2D array
+    // vector<vector<int>> matrix(n, vector<int>(n));
+    // for (int i = 0; i < n; i++) {
+    //     for (int j = 0; j < n; j++) {
+    //         cin >> matrix[i][j];
+    //     }
+    // }
+
+    // ---- Display array ----
+    cout << "Array elements : " << endl ;
+    display(arr); //-- for 1D array
+    //displayMatrix(matrix); //-- for 2D array
+
+    // ---- Function call ----
+    //vector<int> arrayanswer = ;       //-- for 1D return 
+    //vector<vector<int>> arrayanswer = ;  //-- for 2D return
+    // int answer = ;   //-- for single return
+
+
+    // ----- Display answer -----
+    //cout << "answer to this question is : " << answer << "\n";
+
+    // ------ display function after call ------
+    //cout << "array after call : " << endl ;
+    //display(arrayanswer) ;  
+    //displayMatrix(arrayanswer);  
+
+}
+```
 
 #### largest element
 ```cpp
