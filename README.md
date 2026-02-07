@@ -272,7 +272,6 @@ Matrix (4 × 4):
 
 ### striver a to z questions 
 #### EASY
-- [boiler plate code](#boiler-plate-code)
 - [find largest element](#largest-element)
 - [find second smallest largest ](#second-smallest-and-largest)
 - [chech if array is sorted](#check-sort)
@@ -321,57 +320,6 @@ Matrix (4 × 4):
 
 
 ## EASY
-
-#### boiler plate code
-```cpp
-#include <bits/stdc++.h>
-#include <vector>
-using namespace std;
-
-// Function to find largest element
-
-
-// function for displaying array aftercalling function
-void display(const vector<int>& v) {
-    for (int x : v) {
-        cout << x << " ";
-    }
-    cout << endl;
-}
-
-int main() {
-    int n;
-    cout << "Enter size of array: ";
-    cin >> n;
-
-    vector<int> arr(n);
-    cout << "Enter array elements: ";
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
-    }
-
-    // ---- Display array ----
-    cout << "Array elements : ";
-    for (int i = 0; i < n; i++) {
-         cout << arr[i] << " ";
-    }
-    cout << endl;
-
-    // ---- Function call ----
-    vector<int> arrayanswer =  ; //function 
-    int answer = 0;
-
-    // ----- Display answer -----
-    cout << "answer to this question is : " << answer << "\n";
-
-    // ------ display function after call ------
-    cout << "array after call : ";
-    display(arrayanswer);
-
-    return 0;
-}
-```
-
 
 #### largest element
 ```cpp
