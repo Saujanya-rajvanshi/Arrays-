@@ -1919,7 +1919,7 @@ vector<vector<int>> rotateMatrix(vector<vector<int>> &matrix, int n) {
 TC = O(N x N) <br>
 SC = O(1)
 ```cpp
-void rotateMatrix(vector<vector<int>> &mat) {
+vector<vector<int>> rotateMatrix(vector<vector<int>> &mat) {
     int n = mat.size();
 
     // Step 1: Transpose
@@ -1933,6 +1933,8 @@ void rotateMatrix(vector<vector<int>> &mat) {
     for (int i = 0; i < n; i++) {
         reverse(mat[i].begin(), mat[i].end());
     }
+
+    return mat;
 }
 ```
 
@@ -1961,7 +1963,6 @@ SC = O()
 * **0PTIMAL**
 TC = O() <br>
 SC = O()
-
 
 
 ## HARD
