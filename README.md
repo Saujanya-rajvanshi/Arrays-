@@ -1823,8 +1823,8 @@ vector<vector<int>> zeroMatrix(vector<vector<int>> &matrix, int n, int m) {
 
 #### rotate matrix by ninty degrees
 * **BRUTE**
-TC = O(N*N) <BR>
-SC = O(N*N)
+TC = O(N x N) <BR>
+SC = O(N x N)
 ```cpp
 vector<vector<int>> rotateMatrix(vector<vector<int>> &matrix, int n) {
     vector<vector<int>> ans(n, vector<int>(n));
@@ -1840,12 +1840,9 @@ vector<vector<int>> rotateMatrix(vector<vector<int>> &matrix, int n) {
 ```
 
 * **0PTIMAL**
-TC = O(N*N) <br>
+TC = O(N x N) <br>
 SC = O(1)
 ```cpp
-#include <bits/stdc++.h>
-using namespace std;
-
 void rotateMatrix(vector<vector<int>> &mat) {
     int n = mat.size();
 
