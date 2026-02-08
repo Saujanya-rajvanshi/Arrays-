@@ -1901,8 +1901,8 @@ vector<vector<int>> zeroMatrix(vector<vector<int>> &matrix, int n, int m) {
 
 #### rotate matrix by ninty degrees
 * **BRUTE**
-TC = O(N x N) <BR>
-SC = O(N x N)
+TC = O(n x n) <BR>
+SC = O(n x n)
 ```cpp
 vector<vector<int>> rotateMatrix(vector<vector<int>> &mat, int n) {
     vector<vector<int>> ans(n, vector<int>(n));
@@ -1918,7 +1918,7 @@ vector<vector<int>> rotateMatrix(vector<vector<int>> &mat, int n) {
 ```
 
 * **0PTIMAL**
-TC = O(N x N) <br>
+TC = O(n x n) <br>
 SC = O(1)
 ```cpp
 vector<vector<int>> rotateMatrix(vector<vector<int>> &mat) {
@@ -1943,8 +1943,8 @@ vector<vector<int>> rotateMatrix(vector<vector<int>> &mat) {
 #### print the matrix in spiral manner
 
 * **0PTIMAL**
-TC = O(N x M) <br>
-SC = O(N x M)
+TC = O(n x m) <br>
+SC = O(n x m)
 ```cpp
 vector<int> spiralMatrix(vector<vector<int>> &mat) {
     int n = mat.size();
@@ -1988,45 +1988,222 @@ vector<int> spiralMatrix(vector<vector<int>> &mat) {
 
 #### count subarrays with given sum
 * **BRUTE**
-TC = O() <br>
-SC = O()
+TC = O(nxnxn) <br>
+SC = O(1)
+```cpp
+int countSubarrays(vector<int> &arr, int k) {
+    int n = arr.size();
+    int cnt = 0;
+
+    for (int i = 0; i < n; i++) {
+        for (int j = i; j < n; j++) {
+            int sum = 0;
+            for (int l = i; l <= j; l++) {
+                sum += arr[l];
+            }
+            if (sum == k) cnt++;
+        }
+    }
+
+    return cnt;
+}
+```
 
 * **BETTER**
-TC = O() <br>
-SC = O()
+TC = O(nxn) <br>
+SC = O(1)
+```cpp
+int countSubarrays(vector<int> &arr, int k) {
+    int n = arr.size();
+    int cnt = 0;
+
+    for (int i = 0; i < n; i++) {
+        int sum = 0;
+        for (int j = i; j < n; j++) {
+            sum += arr[j];
+            if (sum == k) cnt++;
+        }
+    }
+
+    return cnt;
+}
+```
 
 * **0PTIMAL**
-TC = O() <br>
-SC = O()
+TC = O(n) <br>
+SC = O(n)
+```cpp
+#include <unordered_map>
+
+int countSubarraysOptimal(vector<int> &arr, int k) {
+    unordered_map<int, int> mp;
+    mp[0] = 1;  // base case for subarrays starting at index 0
+    int preSum = 0, cnt = 0;
+
+    for (int i = 0; i < arr.size(); i++) {
+        preSum += arr[i];
+        int remove = preSum - k;
+        if (mp.find(remove) != mp.end()) cnt += mp[remove];
+        mp[preSum]++;
+    }
+
+    return cnt;
+}
+```
 
 
 ## HARD
 
 #### pascals triangle
 * **BRUTE**
-TC = O() <br>
-SC = O()
+TC = O(r) <br>
+SC = O(1)
+```cpp
+int nCr(int n, int r) {
+    long long res = 1;
+
+    for (int i = 0; i < r; i++) {
+        res = res * (n - i);
+        res = res / (i + 1);
+    }
+
+    return res;
+}
+```
 
 * **BETTER**
-TC = O() <br>
-SC = O()
-
+TC = O(n*r) <br>
+printing a row of Pascal’s Triangle using nCr.
+```cpp
+int nCr(int n, int r) {
+    long long res = 1;
+    for (int i = 0; i < r; i++) {
+        res = res * (n - i);
+        res = res / (i + 1);
+    }
+    return res;
+}
+```
 * **0PTIMAL**
-TC = O() <br>
-SC = O()
+TC = O(row) <br>
+SC = O(row) <br>
+```cpp
+    vector<int> generateRow(int row) {
+        long long ans = 1;
+        vector<int> ansRow;
+        ansRow.push_back(1);   // first element is always 1
+
+        for (int col = 1; col < row; col++) {
+            ans = ans * (row - col);
+            ans = ans / col;
+            ansRow.push_back(ans);
+        }
+        return ansRow;
+    }
+
+    vector<vector<int>> pascalTriangle(int N) {
+        vector<vector<int>> ans;
+
+        for (int i = 1; i <= N; i++) {
+            ans.push_back(generateRow(i));
+        }
+        return ans;
+    }
+```
 
 #### majority element n by three times
 * **BRUTE**
-TC = O() <br>
-SC = O()
+TC = O(n*n) <br>
+SC = O(1)
+```cpp
+vector<int> majorityElement(vector<int>& v) {
+    int n = v.size();
+    vector<int> ls;
+
+    for (int i = 0; i < n; i++) {
+        if (ls.size() == 2) break;
+
+        bool found = false;
+        for (int x : ls) {
+            if (x == v[i]) found = true;
+        }
+        if (found) continue;
+
+        int cnt = 0;
+        for (int j = 0; j < n; j++) {
+            if (v[j] == v[i]) cnt++;
+        }
+
+        if (cnt > n / 3) ls.push_back(v[i]);
+    }
+
+    return ls;
+}
+```
 
 * **BETTER**
-TC = O() <br>
-SC = O()
+TC = O(n) <br>
+SC = O(n)
+```cpp
+vector<int> majorityElement(vector<int>& v) {
+    int n = v.size();
+    vector<int> ls;
+    unordered_map<int, int> mpp;
+
+    for (int i = 0; i < n; i++) {
+        mpp[v[i]]++;
+        if (mpp[v[i]] == (n / 3) + 1) {
+            ls.push_back(v[i]);
+        }
+        if (ls.size() == 2) break;
+    }
+
+    return ls;
+}
+```
 
 * **0PTIMAL**
-TC = O() <br>
-SC = O()
+TC = O(n) <br>
+SC = O(1)
+```cpp
+vector<int> majorityElement(vector<int>& v) {
+    int cnt1 = 0, cnt2 = 0;
+    int el1 = INT_MIN, el2 = INT_MIN;
+
+    // Step 1: Find potential candidates
+    for (int i = 0; i < v.size(); i++) {
+        if (cnt1 == 0 && el2 != v[i]) {
+            cnt1 = 1;
+            el1 = v[i];
+        }
+        else if (cnt2 == 0 && el1 != v[i]) {
+            cnt2 = 1;
+            el2 = v[i];
+        }
+        else if (v[i] == el1) cnt1++;
+        else if (v[i] == el2) cnt2++;
+        else {
+            cnt1--;
+            cnt2--;
+        }
+    }
+
+    // Step 2: Verify candidates
+    cnt1 = 0;
+    cnt2 = 0;
+    for (int i = 0; i < v.size(); i++) {
+        if (v[i] == el1) cnt1++;
+        if (v[i] == el2) cnt2++;
+    }
+
+    vector<int> ls;
+    int mini = (v.size() / 3) + 1;
+    if (cnt1 >= mini) ls.push_back(el1);
+    if (cnt2 >= mini) ls.push_back(el2);
+
+    return ls;
+}
+```
 
 #### three sum problem
 * **BRUTE**
