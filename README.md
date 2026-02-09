@@ -2207,16 +2207,93 @@ vector<int> majorityElement(vector<int>& v) {
 
 #### three sum problem
 * **BRUTE**
-TC = O() <br>
-SC = O()
+TC = O(n³ * log(uniqueTriplets)) → approx O(n³) <br>
+SC = O(uniqueTriplets) 
+```cpp
+vector<vector<int>> triplet(int n, vector<int> &num) {
+    set<vector<int>> st;
+
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            for (int k = j + 1; k < n; k++) {
+                if (num[i] + num[j] + num[k] == 0) {
+                    vector<int> temp = {num[i], num[j], num[k]};
+                    sort(temp.begin(), temp.end());
+                    st.insert(temp);
+                }
+            }
+        }
+    }
+
+    vector<vector<int>> ans(st.begin(), st.end());
+    return ans;
+}
+```
 
 * **BETTER**
-TC = O() <br>
-SC = O()
+TC = O(n² log k) <br>
+SC = O(n)
+```cpp
+vector<vector<int>> triplet(int n, vector<int> &num) {
+    set<vector<int>> st;
+
+    for (int i = 0; i < n; i++) {
+        set<int> hashset;
+
+        for (int j = i + 1; j < n; j++) {
+            int third = -(num[i] + num[j]);
+
+            if (hashset.find(third) != hashset.end()) {
+                vector<int> temp = {num[i], num[j], third};
+                sort(temp.begin(), temp.end());
+                st.insert(temp);
+            }
+
+            hashset.insert(num[j]);
+        }
+    }
+
+    vector<vector<int>> ans(st.begin(), st.end());
+    return ans;
+}
+```
 
 * **0PTIMAL**
-TC = O() <br>
-SC = O()
+TC = O(n²) <br>
+SC = O(1)
+```cpp
+vector<vector<int>> triplet(int n, vector<int> &num) {
+    vector<vector<int>> ans;
+    sort(num.begin(), num.end());
+
+    for (int i = 0; i < n; i++) {
+        if (i > 0 && num[i] == num[i - 1]) continue;
+
+        int j = i + 1;
+        int k = n - 1;
+
+        while (j < k) {
+            int sum = num[i] + num[j] + num[k];
+
+            if (sum < 0) {
+                j++;
+            }
+            else if (sum > 0) {
+                k--;
+            }
+            else {
+                ans.push_back({num[i], num[j], num[k]});
+                j++;
+                k--;
+
+                while (j < k && num[j] == num[j - 1]) j++;
+                while (j < k && num[k] == num[k + 1]) k--;
+            }
+        }
+    }
+    return ans;
+}
+```
 
 #### four sum problem
 * **BRUTE**
