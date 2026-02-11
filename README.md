@@ -2426,16 +2426,63 @@ SC = O()
 
 #### count number of subarrays with given xor k
 * **BRUTE**
-TC = O() <br>
-SC = O()
+TC = O(n³) <br>
+SC = O(1)
+```cpp
+int subarraysWithSumK(vector<int> a, int k) {
+    int n = a.size();
+    int cnt = 0;
+
+    for (int i = 0; i < n; i++) {
+        for (int j = i; j < n; j++) {
+            int xr = 0;
+            for (int l = i; l <= j; l++) {
+                xr ^= a[l];
+            }
+            if (xr == k) cnt++;
+        }
+    }
+    return cnt;
+}
+```
 
 * **BETTER**
-TC = O() <br>
-SC = O()
+TC = O(n²) <br>
+SC = O(1)
+```cpp
+int subarraysWithSumK(vector<int> a, int k) {
+    int n = a.size();
+    int cnt = 0;
+
+    for (int i = 0; i < n; i++) {
+        int xr = 0;
+        for (int j = i; j < n; j++) {
+            xr ^= a[j];
+            if (xr == k) cnt++;
+        }
+    }
+    return cnt;
+}
+```
 
 * **0PTIMAL**
-TC = O() <br>
-SC = O()
+TC = O(n log n) <br>
+SC = O(n)
+```cpp
+int subarraysWithSumK(vector<int> a, int k) {
+    int n = a.size();
+    int cnt = 0;
+
+    for (int i = 0; i < n; i++) {
+        int xr = 0;
+        for (int j = i; j < n; j++) {
+            xr ^= a[j];
+            if (xr == k) cnt++;
+        }
+    }
+    return cnt;
+}
+```
 
 #### merge overlapping subintervals
 * **BRUTE**
