@@ -420,9 +420,9 @@ Used in:
 
 ---
 
-# Things Students Usually Don’t Know
+##  Things Students Usually Don’t Know
 
-### ⚠ `reserve()`
+* `reserve()`
 
 ```cpp
 v.reserve(1000);
@@ -430,22 +430,13 @@ v.reserve(1000);
 
 Prevents multiple reallocations.
 
-### ⚠ Pass by reference (IMPORTANT)
+* Pass by reference 
 
 ```cpp
 void solve(vector<int>& v)
 ```
 
 Otherwise copy happens → O(n)
-
-
-### ⚠ When to use `vector` vs `array`
-
-Use `vector`:
-
-* When size unknown
-* Competitive programming
-* Interview problems
 
 ---
 
