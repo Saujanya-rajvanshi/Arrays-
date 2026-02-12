@@ -6,6 +6,8 @@
 - [types](#Type)
 - [size of an array](#size-of-an-array)
 - [sparse matrix](#sparse-matrix)
+- [Must-Know Vector Operations](#Must-Know-Vector-Operations)
+- [STL Functions You MUST Know](#STL-Functions-You-MUST-Know)
 - [striver a to z questions](#striver-a-to-z-questions)
   
 # Basic 
@@ -267,6 +269,183 @@ Matrix (4 × 4):
 
 > A sparse matrix stores mostly zero values, so memory and computation can be optimized by storing only non-zero elements using special representations.
 
+---
+
+# Must Know Vector Operations
+
+### Declaration
+
+```cpp
+vector<int> v;
+vector<int> v(n);          // size n, default 0
+vector<int> v(n, 5);       // size n, all 5
+```
+
+### Size & Capacity
+
+```cpp
+v.size()
+v.empty()
+v.capacity()
+```
+* `size` = elements
+* `capacity` = allocated memory
+
+###  Access
+
+```cpp
+v[i]
+v.at(i)        // safe access
+v.front()
+v.back()
+```
+
+### Insert / Delete
+
+```cpp
+v.push_back(x)
+v.pop_back()
+
+v.insert(v.begin() + i, x)
+v.erase(v.begin() + i)
+v.clear()
+```
+
+* Insertion/erase in middle = O(n)
+
+# STL Functions You MUST Know 
+
+### Sorting
+
+```cpp
+sort(v.begin(), v.end());
+sort(v.rbegin(), v.rend());  // descending
+```
+
+Custom comparator:
+
+```cpp
+sort(v.begin(), v.end(), greater<int>());
+```
+
+### Reverse
+
+```cpp
+reverse(v.begin(), v.end());
+```
+
+### Count
+
+```cpp
+count(v.begin(), v.end(), x);
+```
+
+### Find
+
+```cpp
+find(v.begin(), v.end(), x);
+```
+
+### Max / Min
+
+```cpp
+*max_element(v.begin(), v.end());
+*min_element(v.begin(), v.end());
+```
+
+### Accumulate (sum)
+
+```cpp
+accumulate(v.begin(), v.end(), 0);
+```
+
+# Important Concepts for Array Problems
+
+### 💡 1. Two Pointer Technique
+
+Used in:
+
+* Remove duplicates
+* Sorted array problems
+* Pair sum
+* Reverse array
+
+### 💡 2. Prefix Sum
+
+Used in:
+
+* Subarray sum
+* Range queries
+
+### 💡 3. Sliding Window
+
+Used in:
+
+* Max subarray
+* Fixed size window problems
+
+### 💡 4. Kadane’s Algorithm
+
+For:
+
+* Maximum subarray sum
+
+### 💡 5. Frequency Counting
+
+```cpp
+unordered_map<int,int> mp;
+mp[x]++;
+```
+
+OR
+
+```cpp
+vector<int> freq(n+1, 0);
+```
+
+### 💡 6. Dutch National Flag Algorithm
+
+For:
+
+* 0 1 2 sorting
+
+
+### 💡 7. XOR Trick
+
+Used in:
+
+* Missing number
+* Single number
+* Missing & repeating
+
+---
+
+# Things Students Usually Don’t Know
+
+### ⚠ `reserve()`
+
+```cpp
+v.reserve(1000);
+```
+
+Prevents multiple reallocations.
+
+### ⚠ Pass by reference (IMPORTANT)
+
+```cpp
+void solve(vector<int>& v)
+```
+
+Otherwise copy happens → O(n)
+
+
+### ⚠ When to use `vector` vs `array`
+
+Use `vector`:
+
+* When size unknown
+* Competitive programming
+* Interview problems
 
 ---
 
