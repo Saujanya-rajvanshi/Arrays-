@@ -2486,42 +2486,311 @@ int subarraysWithSumK(vector<int> a, int k) {
 
 #### merge overlapping subintervals
 * **BRUTE**
-TC = O() <br>
-SC = O()
+TC = O(n log n) <br>
+SC = O(n)
+```cpp
+vector<vector<int>> mergeOverlappingIntervals(vector<vector<int>> &arr) {
+    int n = arr.size();
+    vector<vector<int>> ans;
+
+    if (n == 0) return ans;
+
+    sort(arr.begin(), arr.end());
+
+    ans.push_back(arr[0]);
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i][0] <= ans.back()[1]) {
+            // overlap → merge
+            ans.back()[1] = max(ans.back()[1], arr[i][1]);
+        } 
+        else {
+            // no overlap
+            ans.push_back(arr[i]);
+        }
+    }
+
+    return ans;
+}
+```
 
 * **BETTER**
-TC = O() <br>
-SC = O()
+TC = O(n log n) <br>
+SC = O(n)
+```cpp
+vector<vector<int>> mergeOverlappingIntervals(vector<vector<int>> &arr) {
+    int n = arr.size();
+    vector<vector<int>> ans;
+
+    if (n == 0) return ans;
+
+    sort(arr.begin(), arr.end());
+    ans.push_back(arr[0]);
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i][0] <= ans.back()[1]) {
+            ans.back()[1] = max(ans.back()[1], arr[i][1]);
+        } else {
+            ans.push_back(arr[i]);
+        }
+    }
+
+    return ans;
+}
+```
 
 * **0PTIMAL**
-TC = O() <br>
-SC = O()
+TC = O(n log n) <br>
+SC = O(n)
+```cpp
+vector<vector<int>> mergeOverlappingIntervals(vector<vector<int>> &arr) {
+    int n = arr.size();
+    vector<vector<int>> ans;
+
+    if (n == 0) return ans;
+
+    sort(arr.begin(), arr.end());
+
+    for (int i = 0; i < n; i++) {
+        if (ans.empty() || arr[i][0] > ans.back()[1]) {
+            ans.push_back(arr[i]);
+        } 
+        else {
+            ans.back()[1] = max(ans.back()[1], arr[i][1]);
+        }
+    }
+
+    return ans;
+}
+```
 
 #### merge two sorted arrays without extra space
 * **BRUTE**
-TC = O() <br>
-SC = O()
+TC = O(n+m) <br>
+SC = O(n+m)
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
 
-* **BETTER**
-TC = O() <br>
-SC = O()
+void merge(long long arr1[], long long arr2[], int n, int m) {
 
-* **0PTIMAL**
+    long long arr3[n + m];
+
+    int left = 0;
+    int right = 0;
+    int index = 0;
+
+    // Merge both arrays
+    while (left < n && right < m) {
+        if (arr1[left] <= arr2[right]) {
+            arr3[index++] = arr1[left++];
+        } 
+        else {
+            arr3[index++] = arr2[right++];
+        }
+    }
+
+    // Remaining elements
+    while (left < n) {
+        arr3[index++] = arr1[left++];
+    }
+
+    while (right < m) {
+        arr3[index++] = arr2[right++];
+    }
+
+    // Copy back
+    for (int i = 0; i < n + m; i++) {
+        if (i < n) arr1[i] = arr3[i];
+        else arr2[i - n] = arr3[i];
+    }
+}
+```
+
+* **0PTIMAL 1**
+TC = O(n log n + m log m)) <br>
+SC = O(1)
+```cpp
+class Solution{
+public:
+    // Function to merge two sorted arrays without extra space
+    void merge(long long arr1[], long long arr2[], int n, int m) {
+
+        int left = n - 1;
+        int right = 0;
+
+        // Step 1: Swap elements if needed
+        while (left >= 0 && right < m) {
+            if (arr1[left] > arr2[right]) {
+                swap(arr1[left], arr2[right]);
+                left--;
+                right++;
+            }
+            else {
+                break;
+            }
+        }
+
+        // Step 2: Sort both arrays
+        sort(arr1, arr1 + n);
+        sort(arr2, arr2 + m);
+    }
+};
+```
+
+
+* **0PTIMAL 2**
 TC = O() <br>
 SC = O()
+```cpp
+class Solution{
+private:
+    void swapIfGreater(long long arr1[], long long arr2[], int ind1, int ind2) {
+        if (arr1[ind1] > arr2[ind2]) {
+            swap(arr1[ind1], arr2[ind2]);
+        }
+    }
+
+public:
+    // Function to merge two sorted arrays without extra space
+    void merge(long long arr1[], long long arr2[], int n, int m) {
+
+        int len = n + m;
+        int gap = (len / 2) + (len % 2);
+
+        while (gap > 0) {
+
+            int left = 0;
+            int right = left + gap;
+
+            while (right < len) {
+
+                // arr1 and arr2
+                if (left < n && right >= n) {
+                    swapIfGreater(arr1, arr2, left, right - n);
+                }
+
+                // arr2 and arr2
+                else if (left >= n) {
+                    swapIfGreater(arr2, arr2, left - n, right - n);
+                }
+
+                // arr1 and arr1
+                else {
+                    swapIfGreater(arr1, arr1, left, right);
+                }
+
+                left++;
+                right++;
+            }
+
+            if (gap == 1) break;
+            gap = (gap / 2) + (gap % 2);
+        }
+    }
+};
+```
 
 #### find the repeating and missing number
 * **BRUTE**
-TC = O() <br>
-SC = O()
+TC = O(n) <br>
+SC = O(n)
+```cpp
+vector<int> findMissingRepeatingNumbers(vector<int> a) {
+    int n = a.size();
+    vector<int> freq(n + 1, 0);
 
-* **BETTER**
-TC = O() <br>
-SC = O()
+    for(int i = 0; i < n; i++) {
+        freq[a[i]]++;
+    }
 
-* **0PTIMAL**
-TC = O() <br>
-SC = O()
+    int repeating = -1, missing = -1;
+
+    for(int i = 1; i <= n; i++) {
+        if(freq[i] == 2) repeating = i;
+        if(freq[i] == 0) missing = i;
+    }
+
+    return {repeating, missing};
+}
+```
+
+* **OPTIMAL 1**
+TC = O(n) <br>
+SC = O(1)
+```cpp
+vector<int> findMissingRepeatingNumbers(vector<int> a) {
+    long long n = a.size();
+
+    long long SN = (n * (n + 1)) / 2;
+    long long S2N = (n * (n + 1) * (2 * n + 1)) / 6;
+
+    long long S = 0, S2 = 0;
+
+    for(int i = 0; i < n; i++) {
+        S += a[i];
+        S2 += (long long)a[i] * a[i];
+    }
+
+    long long val1 = SN - S;        // x - y
+    long long val2 = S2N - S2;      // x² - y²
+    val2 = val2 / val1;             // x + y
+
+    long long missing = (val1 + val2) / 2;
+    long long repeating = missing - val1;
+
+    return {(int)repeating, (int)missing};
+}
+```
+
+* **0PTIMAL 2**
+TC = O(n) <br>
+SC = O(1)
+```cpp
+vector<int> findMissingRepeatingNumbers(vector<int> a) {
+    int n = a.size();
+    int xr = 0;
+
+    // Step 1: XOR of all array elements and 1 to n
+    for(int i = 0; i < n; i++) {
+        xr = xr ^ a[i];
+        xr = xr ^ (i + 1);
+    }
+
+    // Step 2: Find rightmost set bit
+    int number = xr & ~(xr - 1);
+
+    int zero = 0, one = 0;
+
+    // Step 3: Divide elements into two groups (array elements)
+    for(int i = 0; i < n; i++) {
+        if((a[i] & number) != 0)
+            one ^= a[i];
+        else
+            zero ^= a[i];
+    }
+
+    // Step 4: Divide numbers 1 to n into two groups
+    for(int i = 1; i <= n; i++) {
+        if((i & number) != 0)
+            one ^= i;
+        else
+            zero ^= i;
+    }
+
+    // Step 5: Check which one is repeating
+    int cnt = 0;
+    for(int i = 0; i < n; i++) {
+        if(a[i] == zero) cnt++;
+    }
+
+    if(cnt == 2)
+        return {zero, one};   // zero = repeating
+    else
+        return {one, zero};   // one = repeating
+}
+```
+
 
 #### count inversions
 * **BRUTE**
