@@ -568,6 +568,19 @@ int main() {
 ```
 
 #### largest element
+* **brute**
+TC = O(n log n) <br>
+SC = O(1)
+```cpp
+int largestElement(vector<int>& arr) {
+    int n = arr.size();
+    
+    sort(arr.begin(), arr.end());
+    
+    return arr[n - 1];
+}
+```
+
 ```cpp
 #include <bits/stdc++.h>
 largestElement(vector<int> &arr, int n) {
