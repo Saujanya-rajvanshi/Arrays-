@@ -581,6 +581,10 @@ int largestElement(vector<int>& arr) {
 }
 ```
 
+
+* **optimal**
+TC = O(n) <br>
+SC = O(1)
 ```cpp
 #include <bits/stdc++.h>
 largestElement(vector<int> &arr, int n) {
@@ -592,20 +596,24 @@ largestElement(vector<int> &arr, int n) {
     }
 return largest;
 }
-
-//TC = O(N)
 ```
 
 
 #### second smallest and largest 
-
+* **brute**
+TC = O(n) <br>
+SC = O(1)
 ```cpp
 //BRUTE
 //sort and check if from the back the element is equal to largest aka last element eg : 1 2 3 4 5 7 7  TC = O(NLOGN + N )
+```
 
-//BETTER
-//check while traversing if the elem is largest than the largest aka 0 index and it  TC = O(2N)
+* **better**
+TC = O(2n) <br>
+SC = O(1)
+//check while traversing if the elem is largest than the largest aka 0 index and it is not equal to largest
 
+```cpp
 int largestElement(vector<int> &arr, int n) {
 int largest = arr[0];
     int secondLargest = -1;
@@ -628,11 +636,10 @@ return secondLargest;
 }
 ```
 
+* **optimal**
+TC = O(n)+O(n) <br>
+SC = O(1)
 ```cpp
-//OPTIMAL
-#include <bits/stdc++.h>
-using namespace std;
-
 int secondLargest(vector<int> &arr, int n) {
     int largest = arr[0];
     int slargest = -1; // for all positives;
@@ -649,7 +656,6 @@ int secondLargest(vector<int> &arr, int n) {
     }
 
 return slargest;
-
 //TC = O(N)
 }
 
@@ -682,6 +688,7 @@ int main() {
 ```
 
 #### check sort 
+TC=O(n)
 ```cpp
 bool check_sorted(const vector<int>& ar, int n) {
     for (int i = 1; i < n; i++) {
@@ -694,6 +701,15 @@ bool check_sorted(const vector<int>& ar, int n) {
 ```
 
 #### remove duplicate
+* **brute**
+TC = O(n log n)+ O(n) <br> 
+SC = O(n)
+```cpp
+```
+
+* **optimal**
+TC = O(n) <br> 
+SC = O(1)
 ```cpp
 int removeDuplicates(vector<int> &arr, int n) {
     int i = 0;
@@ -720,10 +736,9 @@ return arr;
 }
 ```
 #### left rotate upto d index
-* TC = O(n+d)
-* SC = O(d)
 * **brute approach**
-
+TC = O(n+d) <br>
+SC = O(d)
 ```cpp
 vector<int> leftRotate(vector<int>& arr, int n) {
     cout << "how many shifting : ";
@@ -746,12 +761,9 @@ return arr;
 }
 ```
 
----
 * **optimal approach**
-* TC = O(N)
+* TC = O(n)
 * SC = O(1)
-
-
 ```cpp
 vector<int> leftRotate(vector<int>& arr, int n) {
     cout << "how many shifting : ";
