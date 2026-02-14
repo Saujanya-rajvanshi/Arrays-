@@ -735,8 +735,9 @@ vector<int> rotateArray(vector<int>& arr, int n){
 return arr;
 }
 ```
-#### left rotate upto d index
-* **brute approach**
+#### LEFT rotate upto d index
+
+* **brute approach** 
 TC = O(n+d) <br>
 SC = O(d)
 ```cpp
@@ -762,7 +763,7 @@ return arr;
 ```
 
 * **optimal approach**
-* TC = O(n)
+* TC = O(2n)
 * SC = O(1)
 ```cpp
 vector<int> leftRotate(vector<int>& arr, int n) {
@@ -791,7 +792,7 @@ void reverseVector(vector<int>& arr, int start, int end) {
 }
 ```
 
-#### right rotate array upto d index
+#### RIGHT rotate array upto d index
 ```cpp
 vector<int> rightRotate(vector<int>& arr, int n) {
     cout << "how many shifting : ";
@@ -808,9 +809,10 @@ return arr;
 ```
 
 #### shift zeros to the last
+
 * **brute force**
-* TC = O(N)
-* SC = O(N)
+* TC = O(2n)
+* SC = O(n)
 
 ```cpp
 vector<int> moveZeros(int n, vector<int>& arr) {
@@ -833,7 +835,8 @@ vector<int> moveZeros(int n, vector<int>& arr) {
     }  
 return arr;
 }
-```
+``` 
+
 * **optimal approach**
 * TC = O(N)
 * SC = O(N)
@@ -858,7 +861,7 @@ vector<int> moveZeros(int n, vector<int> arr) {
 return arr;
 }
 ```
-
+ 
 #### linear search
 ```cpp
 int linearSearch(int n, int num, vector<int> &arr) {
@@ -870,6 +873,7 @@ int linearSearch(int n, int num, vector<int> &arr) {
     return -1; // not found
 }
 ```
+
 * for testing
 ```cpp
 int linearSearch(vector<int>& arr, int n ) {
@@ -887,10 +891,10 @@ int linearSearch(vector<int>& arr, int n ) {
 
 
 #### union array of two sorted array
-```
-TC = O(N1log n + N2log n) + O(N1+N2)
-SC = O(N1+N2) +O(N1+N2)
-```
+
+* **brute**
+TC = O(n1log n + n2log n) + O(n1+n2) <br>
+SC = O(n1+n2) +O(n1+n2)
 
 ```cpp
 vector<int> sortedArray(vector<int>& arr,vector<int>& b) {
@@ -920,10 +924,10 @@ vector<int> sortedArray(vector<int>& arr,vector<int>& b) {
 // this code can be used for unsorted array also as it is using set
 ```
 
----
 
-* TC = O(N1 + N2)
-* SC = O(N1 + N2) //not for the nswer but for the ans to return 
+* **optimal**
+* TC = O(n1 + n2)
+* SC = O(n + n2) //not for the algo but for the ans to return 
 
 ```cpp
 vector < int > sortedArray(vector < int > a,vector < int > b) {
@@ -966,10 +970,11 @@ return unionArr;
 ```
 
 #### intersection of array
-```
-TC = O(N1 * N2)
-SC = O(N2) 
-```
+
+* **brute**
+TC = O(N1 x N2) <br>
+SC = O(N2)
+
 ```cpp
 vector<int> findArrayIntersection(vector<int> &A, int n, vector<int> &B, int m) {
     vector<int> vis(m, 0); // mark visited in B
@@ -988,7 +993,8 @@ vector<int> findArrayIntersection(vector<int> &A, int n, vector<int> &B, int m) 
     return ans;
 }
 ```
-```
+
+* **optimal**
 TC = O(N1 + N2)
 SC = O(1) 
 ```
