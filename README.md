@@ -971,9 +971,9 @@ return unionArr;
 
 #### intersection of array
 
-* **brute**
-TC = O(N1 x N2) <br>
-SC = O(N2)
+* **brute** <br>
+TC = O(n1 x n2) <br>
+SC = O(n2)
 
 ```cpp
 vector<int> findArrayIntersection(vector<int> &A, int n, vector<int> &B, int m) {
@@ -994,8 +994,8 @@ vector<int> findArrayIntersection(vector<int> &A, int n, vector<int> &B, int m) 
 }
 ```
 
-* **optimal**
-TC = O(N1 + N2)
+* **optimal** <br>
+TC = O(n1 + n2) <br>
 SC = O(1) 
 ```
 ```cpp
@@ -1023,9 +1023,10 @@ vector<int> findArrayIntersection(vector<int> &A, int n,vector<int> &B, int m) {
     return ans;
 }
 ```
+
 #### find missing number
 * **brute force**
-* TC O(N*N)
+* TC O(n*n)
 * SC =O(1)
 
 ```cpp
@@ -1043,11 +1044,11 @@ int missingNumber(vector<int>& arr, int n) {
     return -1;
 }
 ```
----
+
 
 * **BETTER**
-* TC = O(N)+O(N)
-* SC = O(N)
+* TC = O(n)+O(n)
+* SC = O(n)
 
 ```cpp
 int missing_Number(vector<int>& arr,int n){
@@ -1073,9 +1074,9 @@ int missing_Number(vector<int>& arr,int n){
 }
 ```
 * **optimal**
-* by sum method <br>
-TC = O(N) <br>
-SC = O(1)
+#### by sum method 
+* TC = O(n) <br>
+* SC = O(1)
 ```cpp
 int missing_Number(vector<int>& arr,int n){
     int N = n + 1;
@@ -1094,9 +1095,8 @@ int missing_Number(vector<int>& arr,int n){
     return ans ;
 }
 ```
----
-* by XOR <br>
-* xor is better than sum method as xor of all number will never excede big number <br>
+#### by XOR <br>
+xor is better than sum method as xor of all number will never excede big number <br>
 in programming XOR works bit-by-bit on integers, not just true/false. <br>
 xor1 = 1 ^ 2 ^ 3 ^ ... ^ N <br>
 xor2 = arr[0] ^ arr[1] ^ ... ^ arr[N-2] <br>
@@ -1110,8 +1110,8 @@ arr = {1, 2, 4, 5}   (3 is missing) <br>
 (1^1) ^ (2^2) ^ (4^4) ^ (5^5) ^ 3 <br>
 0 ^ 0 ^ 0 ^ 0 ^ 3 = 3 <br>
 
-TC = O(N) <br>
-SC = O(1)
+* TC = O(n) 
+* SC = O(1)
 
 ```cpp
 int missing_Number(vector<int>& arr,int n){
@@ -1132,8 +1132,6 @@ int missing_Number(vector<int>& arr,int n){
 ```
 
 #### maximum no. of consecutive ones
-TC = O(N) <br>
-SC = O(1) <br>
 
 ```cpp
 int findMaxConsecutiveOnes(vector<int>& arr) {
@@ -1155,7 +1153,10 @@ int findMaxConsecutiveOnes(vector<int>& arr) {
 
 #### find single number 
 * one number appearing once and other appearing twice
-* brute force 
+* **brute force**
+* TC = O(n x n) 
+* SC = O(1)
+
 ```cpp
 int singleNumber(vector<int>& arr) {
     int n = arr.size();
@@ -1182,7 +1183,10 @@ int singleNumber(vector<int>& arr) {
 }
 ```
 
-* better
+* **better**
+* TC = O(3n) 
+* SC = O(max)
+
 ```cpp
 // hashing can be used for negatives also but if the numbers are very big than not 
 int singleNumber(vector<int> &arr,int n) {
@@ -1232,7 +1236,9 @@ int singleNumber(vector<int>& arr, int n) {
 }
 ```
 
-* optimal
+* **optimal**
+* TC = O(n) 
+* SC = O(1)
 
 ```cpp
 int singleNumber(vector<int> &arr) {
