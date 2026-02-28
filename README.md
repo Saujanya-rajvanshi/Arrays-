@@ -9,6 +9,10 @@
 - [Must-Know Vector Operations](#Must-Know-Vector-Operations)
 - [STL Functions You MUST Know](#STL-Functions-You-MUST-Know)
 - [striver a to z questions](#striver-a-to-z-questions)
+- [Problem Solving Techniques](#Problem-Solving-Techniques)
+- [Platforms for Practice](#Problem-Solving-Techniques)
+
+
   
 # Basic 
 * elements aranged in continuous memory 
@@ -3038,3 +3042,78 @@ SC = O()
 * **0PTIMAL**
 TC = O() <br>
 SC = O()
+
+
+
+
+# Problem Solving Techniques
+## Arrays 
+```
+for(int i = 0;i < nums.size()-1; i++){ //only nums.size will create an error becouse at last index there is no i+1
+            int sum = nums[i] + nums[i+1]; 
+```
+
+# Platforms for Practice
+
+## Arrays
+### PHASE 1 — Basic Traversal / Manipulation
+
+1. Two Sum
+2. Best Time to Buy and Sell Stock
+3. Contains Duplicate
+4. Maximum Subarray (Kadane)
+5. Move Zeroes
+6. Remove Duplicates from Sorted Array
+7. Merge Sorted Array
+8. Rotate Array
+
+### PHASE 2 — Prefix / Mathematical Thinking
+
+9. Product of Array Except Self
+10. Subarray Sum Equals K
+11. Find Pivot Index
+12. Running Sum of 1D Array
+13. Range Sum Query – Immutable
+14. Maximum Product Subarray
+
+### PHASE 3 — Two Pointer Pattern
+
+15. Container With Most Water
+16. 3Sum
+17. 4Sum
+18. Sort Colors (Dutch National Flag)
+19. Squares of a Sorted Array
+
+### PHASE 4 — Sliding Window Basics
+
+20. Longest Substring Without Repeating Characters
+21. Maximum Average Subarray I
+22. Minimum Size Subarray Sum
+23. Longest Repeating Character Replacement
+
+### PHASE 5 — Binary Search on Array
+
+24. Search in Rotated Sorted Array
+25. Find Minimum in Rotated Sorted Array
+26. Find Peak Element
+27. First and Last Position of Element
+
+### PHASE 6 — Advanced Array Thinking
+
+28. Trapping Rain Water
+29. Majority Element (Boyer-Moore)
+30. Gas Station
+31. Set Matrix Zeroes
+32. Spiral Matrix
+<br>
+If you master these 32 properly,
+your array foundation becomes very strong.
+
+#### How To Use This List
+
+For each problem:
+
+1. Solve brute force first.
+2. Optimize.
+3. Understand pattern name.
+4. Write pattern in notebook.
