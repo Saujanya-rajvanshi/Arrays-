@@ -126,6 +126,213 @@ void display(int *ar) {
 }
 ```
 
+# ways to initialize an array.
+
+### 1. Full Initialization
+
+```cpp
+int arr[5] = {1, 2, 3, 4, 5};
+```
+
+Output:
+
+```cpp
+{1, 2, 3, 4, 5}
+```
+
+### 2. Size Inferred Automatically
+
+```cpp
+int arr[] = {1, 2, 3, 4, 5};
+```
+
+Compiler calculates size as 5.
+
+### 3. Partial Initialization
+
+```cpp
+int arr[5] = {1, 2};
+```
+
+Output:
+
+```cpp
+{1, 2, 0, 0, 0}
+```
+
+Remaining elements are initialized to `0`.
+
+### 4. All Elements Zero
+
+```cpp
+int arr[5] = {0};
+```
+
+Output:
+
+```cpp
+{0, 0, 0, 0, 0}
+```
+
+### 5. Empty Initialization (C++11 and later)
+
+```cpp
+int arr[5] = {};
+```
+
+Output:
+
+```cpp
+{0, 0, 0, 0, 0}
+```
+
+### 6. Character Array with String Literal
+
+```cpp
+char str[] = "Hello";
+```
+
+Actually stores:
+
+```cpp
+{'H', 'e', 'l', 'l', 'o', '\0'}
+```
+
+Equivalent to:
+
+```cpp
+char str[] = {'H', 'e', 'l', 'l', 'o', '\0'};
+```
+
+### 7. Runtime Initialization Using Loop
+
+```cpp
+int arr[5];
+
+for(int i = 0; i < 5; i++) {
+    arr[i] = i + 1;
+}
+```
+
+Output:
+
+```cpp
+{1, 2, 3, 4, 5}
+```
+
+### 8. Initialize Every Element to Same Value
+
+```cpp
+int arr[5];
+
+for(int i = 0; i < 5; i++) {
+    arr[i] = 10;
+}
+```
+
+Output:
+
+```cpp
+{10, 10, 10, 10, 10}
+```
+
+### 9. Using `std::fill()`
+
+```cpp
+#include <algorithm>
+
+int arr[5];
+std::fill(arr, arr + 5, 7);
+```
+
+Output:
+
+```cpp
+{7, 7, 7, 7, 7}
+```
+
+### 10. Using `memset()` (Only for 0 or byte values)
+
+```cpp
+#include <cstring>
+
+int arr[5];
+memset(arr, 0, sizeof(arr));
+```
+
+Output:
+
+```cpp
+{0, 0, 0, 0, 0}
+```
+
+Common use:
+
+```cpp
+memset(arr, -1, sizeof(arr));
+```
+
+Output:
+
+```cpp
+{-1, -1, -1, -1, -1}
+```
+
+### 11. 2D Array Initialization
+
+```cpp
+int arr[2][3] = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
+```
+
+
+### 12. Partial 2D Initialization
+
+```cpp
+int arr[2][3] = {
+    {1, 2},
+    {4}
+};
+```
+
+Output:
+
+```cpp
+{
+  {1, 2, 0},
+  {4, 0, 0}
+}
+```
+
+### 13. C++11 Uniform Initialization
+
+```cpp
+int arr[5]{1, 2, 3, 4, 5};
+```
+
+Or:
+
+```cpp
+int arr[5]{};
+```
+
+All elements become `0`.
+
+### Summary
+
+```cpp
+int arr[5] = {1,2,3,4,5};   // Full initialization
+int arr[] = {1,2,3};        // Size inferred
+int arr[5] = {1,2};         // Partial initialization
+int arr[5] = {0};           // All zero
+int arr[5] = {};            // All zero (C++11)
+int arr[5]{1,2,3,4,5};      // Uniform initialization
+```
+
+
+
 #### type 
 ## Types of Arrays
 
