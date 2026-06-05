@@ -18,6 +18,10 @@
 * elements aranged in continuous memory 
 * elements are of same type 
 
+* if array declare in main then it is filled with garbage value
+* if array declare in main then it is filled with 0
+
+
 ## Array: Advantages & Disadvantages 
 
 ###  Advantages
@@ -3254,7 +3258,106 @@ SC = O()
 
 
 # Problem Solving Techniques
-## Arrays 
+* [traversal](#traversal)
+* [Finding max/min](#Finding-max-min)
+
+### traversal
+
+* **1. Using a `for` Loop**   for(int i = 0; i < 5; i++) 
+* **2. Using a `while` Loop**    int i = 0;   while(i < 5)
+* **3. Using a `do-while` Loop**    int i = 0;  do { } while(i < 5);
+* **4. Range-Based `for` Loop (C++11)**   for(int num : arr) 
+* **5. Using Pointers**  int* ptr = arr; for(int i = 0; i < 5; i++) { cout << *(ptr + i) << " "; }
+* **6. Using Iterators (Mostly for `vector`)**  
+```cpp
+vector<int> v = {10, 20, 30, 40, 50};
+
+for(auto it = v.begin(); it != v.end(); it++) {
+    cout << *it << " ";
+}
+```
+* **7. Reverse Traversal**
+```cpp
+for(int i = 4; i >= 0; i--) {
+    cout << arr[i] << " ";
+}
+```
+* **8. Recursive Traversal**
+
+```cpp
+void traverse(int arr[], int n, int index) {
+    if(index == n) return;
+
+    cout << arr[index] << " ";
+    traverse(arr, n, index + 1);
+}
+```
+
+### Finding max min
+
+* **largest :**
+```
+sort(arr.begin(), arr.end());    
+    return arr[n - 1];
+
+or
+
+for(int i = 0;i<n; i++) {
+   if(arr[i] > largest) {
+       largest = arr[i];
+   }
+}
+```
+
+* **second largest :**
+```
+for (int i = 0; i < n; i++) {
+    if (arr[i] > secondLargest && arr[i] != largest) {
+        secondLargest = arr[i];
+    }
+}
+
+or
+
+int largest = arr[0];
+int slargest = -1; // for all positives;
+                   // INT_MIN if array contains negatives
+for (int i = 1; i < n; i++) {
+    if (arr[i] > largest) {
+        slargest = largest;
+        largest = arr[i];
+    }
+    else if (arr[i] < largest && arr[i] > slargest) {
+        slargest = arr[i];
+    }
+ }
+```
+
+* **second smallest :**
+```
+    int smallest = arr[0];
+    int ssmallest = INT_MAX;
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i] < smallest) {
+            ssmallest = smallest;
+            smallest = arr[i];
+        }
+        else if (arr[i] != smallest && arr[i] < ssmallest) {
+            ssmallest = arr[i];
+        }
+    }
+    return ssmallest;
+//TC = O(N)
+}
+```
+* **more questions for largest**
+- [747. Largest Number At Least Twice of Others](https://leetcode.com/problems/largest-number-at-least-twice-of-others/description/?envType=problem-list-v2&envId=array)
+- []()
+
+
+
+
 ```
 for(int i = 0;i < nums.size()-1; i++){ //only nums.size will create an error becouse at last index there is no i+1
             int sum = nums[i] + nums[i+1]; 
@@ -3262,65 +3365,130 @@ for(int i = 0;i < nums.size()-1; i++){ //only nums.size will create an error bec
 
 # Platforms for Practice
 
-## Arrays
-### PHASE 1 — Basic Traversal / Manipulation
+### Step 1: Learn Basic Array Operations
+
+Before LeetCode, be comfortable with:
+
+* Traversing
+* Finding max/min
+* Reversing
+* Rotating
+* Inserting
+* Deleting
+* Frequency counting
+
+---
+
+### Step 2: Solve by Pattern
+
+#### Week 1 — Basic Arrays
 
 1. Two Sum
-2. Best Time to Buy and Sell Stock
-3. Contains Duplicate
-4. Maximum Subarray (Kadane)
-5. Move Zeroes
-6. Remove Duplicates from Sorted Array
-7. Merge Sorted Array
-8. Rotate Array
+2. Contains Duplicate
+3. Best Time to Buy and Sell Stock
+4. Move Zeroes
+5. Remove Duplicates from Sorted Array
+6. Merge Sorted Array
+7. Rotate Array
+8. Maximum Subarray
 
-### PHASE 2 — Prefix / Mathematical Thinking
+Goal:
 
-9. Product of Array Except Self
-10. Subarray Sum Equals K
-11. Find Pivot Index
-12. Running Sum of 1D Array
-13. Range Sum Query – Immutable
+* Learn traversal
+* Learn hash map
+* Learn Kadane
+
+---
+
+#### Week 2 — Prefix Sum
+
+9. Running Sum
+10. Pivot Index
+11. Range Sum Query
+12. Product Except Self
+13. Subarray Sum Equals K
 14. Maximum Product Subarray
 
-### PHASE 3 — Two Pointer Pattern
+Goal:
 
-15. Container With Most Water
-16. 3Sum
-17. 4Sum
-18. Sort Colors (Dutch National Flag)
-19. Squares of a Sorted Array
+* Learn prefix arrays
+* Learn cumulative sums
 
-### PHASE 4 — Sliding Window Basics
+---
 
-20. Longest Substring Without Repeating Characters
-21. Maximum Average Subarray I
-22. Minimum Size Subarray Sum
+#### Week 3 — Two Pointers
+
+15. Squares of Sorted Array
+16. Container With Most Water
+17. 3Sum
+18. Sort Colors
+19. 4Sum
+
+Goal:
+
+* Learn left-right movement
+* Learn sorting + pointers
+
+---
+
+#### Week 4 — Sliding Window
+
+20. Maximum Average Subarray
+21. Minimum Size Subarray Sum
+22. Longest Substring Without Repeating Characters
 23. Longest Repeating Character Replacement
 
-### PHASE 5 — Binary Search on Array
+Goal:
 
-24. Search in Rotated Sorted Array
-25. Find Minimum in Rotated Sorted Array
-26. Find Peak Element
-27. First and Last Position of Element
+* Learn fixed window
+* Learn variable window
 
-### PHASE 6 — Advanced Array Thinking
+---
 
-28. Trapping Rain Water
-29. Majority Element (Boyer-Moore)
-30. Gas Station
-31. Set Matrix Zeroes
-32. Spiral Matrix
-<br>
-If you master these 32 properly,
-your array foundation becomes very strong.
+#### Week 5 — Binary Search
 
-#### How To Use This List
+24. Find Peak Element
+25. First and Last Position
+26. Search in Rotated Array
+27. Find Minimum in Rotated Array
 
-For each problem:
+Goal:
 
-1. Solve brute force first.
-2. Optimize.
-3. Understand pattern name.
-4. Write pattern in notebook.
+* Learn search space reduction
+
+---
+
+#### Week 6 — Advanced Arrays
+
+28. Majority Element
+29. Gas Station
+30. Set Matrix Zeroes
+31. Spiral Matrix
+32. Trapping Rain Water
+
+Goal:
+
+* Learn interview-level thinking
+
+---
+
+## For Every Problem
+
+Write these 5 things in your notebook:
+
+1. Problem Name
+2. Brute Force Complexity
+3. Optimized Complexity
+4. Pattern Used
+5. Key Idea in One Line
+
+Example:
+
+**Two Sum**
+
+* Brute Force: O(n²)
+* Optimized: O(n)
+* Pattern: Hashing
+* Idea: Store visited numbers in a map.
+
+---
