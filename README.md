@@ -12,14 +12,13 @@
 - [Problem Solving Techniques](#Problem-Solving-Techniques)
 - [Platforms for Practice](#Problem-Solving-Techniques)
 
-
   
 # Basic 
 * elements aranged in continuous memory 
 * elements are of same type 
 
-* if array declare in main then it is filled with garbage value
-* if array declare in main then it is filled with 0
+* if array declare in main then it is filled with garbage value - (local)  - size can be max 10^6
+* if array declare in main then it is filled with 0 - (global) -  - size can be max 10^7
 
 
 ## Array: Advantages & Disadvantages 
@@ -3351,10 +3350,18 @@ for (int i = 1; i < n; i++) {
 //TC = O(N)
 }
 ```
+
 * **more questions for largest**
 - [747. Largest Number At Least Twice of Others](https://leetcode.com/problems/largest-number-at-least-twice-of-others/description/?envType=problem-list-v2&envId=array)
 - []()
 
+| Situation                  | Best Choice                           |
+| -------------------------- | ------------------------------------- |
+| Find max (any integers)    | `INT_MIN`                             |
+| Find min (any integers)    | `INT_MAX`                             |
+| Array non empty            | `arr[0]`                              |
+| Values guaranteed positive | `-1` or `0` (safe but less preferred) |
+| Risk of overflow           | `long + LONG_MIN/MAX`                 |
 
 
 
