@@ -918,6 +918,11 @@ bool check_sorted(const vector<int>& ar, int n) {
 TC = O(n log n)+ O(n) <br> 
 SC = O(n)
 ```cpp
+set<int> s;
+
+for(int num : arr) {
+    s.insert(num);
+}
 ```
 
 * **optimal**
@@ -3399,6 +3404,54 @@ Palindrome Number (reverse-thinking)
 Valid Palindrome (two pointers)
 
 ### Remove duplicates
+
+```cpp
+        if(arr[i] == arr[j]) {
+```
+```cpp
+set<int> s;
+
+for(int num : arr) {
+    s.insert(num);
+}
+
+vector<int> result(s.begin(), s.end());
+```
+```cpp
+// Preserve Order
+
+vector<int> result;
+unordered_set<int> seen;
+
+for(int num : arr) {
+
+    if(seen.find(num) == seen.end()) {
+        result.push_back(num);
+        seen.insert(num);
+    }
+}
+```
+```cpp
+// Special Case: Sorted Array
+
+// If the array is already sorted, use Two Pointers.
+
+Example:
+
+[1,1,2,2,3,4,4]
+int k = 1;
+
+for(int i = 1; i < nums.size(); i++) {
+    if(nums[i] != nums[k - 1]) {
+        nums[k] = nums[i];
+        k++;
+    }
+}
+```
+
+
+
+
 
 
 
