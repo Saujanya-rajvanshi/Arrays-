@@ -3256,8 +3256,11 @@ SC = O()
 
 
 # Problem Solving Techniques
-* [traversal](#traversal)
-* [Finding max/min](#Finding-max-min)
+- [traversal](#traversal)
+- [Finding max/min](#Finding-max-min)
+- [Reversing](#Reversing)
+- [Rotating](#Rotating)
+- [Remove duplicates](#Remove-duplicates)
 
 ### traversal
 
@@ -3352,7 +3355,12 @@ for (int i = 1; i < n; i++) {
 
 * **more questions for largest**
 - [747. Largest Number At Least Twice of Others](https://leetcode.com/problems/largest-number-at-least-twice-of-others/description/?envType=problem-list-v2&envId=array)
-- []()
+- [628. Third Maximum Number](https://leetcode.com/problems/maximum-product-of-three-numbers/description/)
+Maximum Product of Three Numbers
+Find Peak Element
+Maximum Subarray
+Minimum Size Subarray Sum
+
 
 | Situation                  | Best Choice                           |
 | -------------------------- | ------------------------------------- |
@@ -3361,6 +3369,52 @@ for (int i = 1; i < n; i++) {
 | Array non empty            | `arr[0]`                              |
 | Values guaranteed positive | `-1` or `0` (safe but less preferred) |
 | Risk of overflow           | `long + LONG_MIN/MAX`                 |
+
+### Reversing
+
+* **two pointer**
+```
+void reverseArray(vector<int>& arr) {
+    int left = 0;
+    int right = arr.size() - 1;
+
+    while(left < right) {
+        swap(arr[left], arr[right]);
+        left++;
+        right--;
+    }
+}
+```
+
+* **stl function**
+```
+reverse(arr.begin(), arr.end());
+```
+
+* **question**
+Best LeetCode Order
+Reverse String
+Rotate Array
+Palindrome Number (reverse-thinking)
+Valid Palindrome (two pointers)
+
+### Remove duplicates
+
+
+
+### Rotating
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
