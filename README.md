@@ -3360,9 +3360,9 @@ for (int i = 1; i < n; i++) {
 
 * **more questions for largest**
 - [747. Largest Number At Least Twice of Others](https://leetcode.com/problems/largest-number-at-least-twice-of-others/description/?envType=problem-list-v2&envId=array)
-- [628. Third Maximum Number](https://leetcode.com/problems/maximum-product-of-three-numbers/description/)
-Maximum Product of Three Numbers
-Find Peak Element
+- [414. Third Maximum Number](https://leetcode.com/problems/third-maximum-number/submissions/2026939881/)
+- [628. Maximum Product of Three Numbers](https://leetcode.com/problems/maximum-product-of-three-numbers/description/)
+- [162. Find Peak Element](https://leetcode.com/problems/find-peak-element/submissions/2026944192/)
 Maximum Subarray
 Minimum Size Subarray Sum
 
