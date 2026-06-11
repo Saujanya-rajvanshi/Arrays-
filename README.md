@@ -1,17 +1,5 @@
 # ARRAY
 
-| **Aspect**                  | **A Priori Analysis**                                        | **A Posteriori Analysis**                                                          |
-| --------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
-| **Definition**              | Analysis done **before execution** of an algorithm.          | Analysis done **after execution** of an algorithm.                                 |
-| **Basis**                   | Based on theoretical calculations and mathematical analysis. | Based on actual execution and experimental results.                                |
-| **Dependency**              | Independent of programming language and hardware.            | Dependent on programming language and hardware.                                    |
-| **Accuracy**                | Gives an approximate answer.                                 | Gives an exact answer.                                                             |
-| **Cost**                    | Cheaper to perform.                                          | Costlier to perform.                                                               |
-| **Execution Required**      | No actual execution is required.                             | Actual execution is required.                                                      |
-| **Performance Measurement** | Estimates time and space complexity.                         | Measures actual running time and memory usage.                                     |
-| **Maintenance**             | Maintenance phase is not required to tune the algorithm.     | Maintenance phase is required to tune the algorithm.                               |
-| **Example**                 | Calculating time complexity as **O(n log n)**.               | Running the program and recording that it takes **0.5 seconds** for a given input. |
-
 ##### index
 - [basic](#basic)
 - [ADT](#ADT)
