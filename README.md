@@ -657,7 +657,7 @@ Otherwise copy happens → O(n)
 #### EASY
 - [boiler plate](#boiler-plate)
 - [find largest element](#largest-element)
-- [find second smallest largest ](#second-smallest-and-largest)  -[kth element](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+- [find second smallest largest ](#second-smallest-and-largest)  -[kth element](https://leetcode.com/problems/kth-largest-element-in-an-array/)  -[dryrun](https://chatgpt.com/s/t_6a7eedf1a38481919b7544e1b097fc1a)
 - [chech if array is sorted](#check-sort) -[lc](https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/description/)
 - [remove duplicate](#remove-duplicate) -[lc](https://leetcode.com/problems/contains-duplicate/description/)
 - [left rotate array by one place](#left-rotate-array)  -[]()
