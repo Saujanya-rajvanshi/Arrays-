@@ -3624,8 +3624,116 @@ Example:
 
 # TWO POINTERS AND SLIDING WINDOW 
 
+4 PATTERNS
 
+### 1. CONSTANT WINDOW 
 
+arr [-1 2 3 3 4 5 -1] k = 4
+
+while (r < n) {
+    sum = sum - arr[l]
+    l++;
+    r++;
+    sum = sum + arr[r];
+}
+
+expand → r
+shrink → l
+
+### 2. Longest subarray with Sum k
+
+Brute – generating Subarray
+Better – Expand & Shrink
+Optimal – if used
+
+Brute : Generating all Subarray
+
+maxlen = 0
+
+for (i = 0 → n-1) {
+    sum = 0
+
+    for (j = i → n-1) {
+        sum = sum + arr[j];
+
+        if (sum <= k)
+            maxlen = max(maxlen, j-i+1);
+
+        else if (sum > k) break;
+    }
+}
+Better
+l = 0, r = 0, sum = 0, maxlen = 0
+
+while (r < n) {
+
+    sum = sum + arr[r]
+
+    while (sum > k) {
+        sum = sum - arr[l]
+        l = l + 1;
+    }
+
+    if (sum <= k)
+        maxlen = max(maxlen, r-l+1);
+
+    r = r + 1;
+}
+
+Point (maxlen)
+
+TC → O(N+N)
+SC → O(2)
+Optimal
+
+→ if
+
+TC → O(N)
+SC → O(2)
+
+### 3. No. of Subarrays = k
+expand?
+shrink?
+difficult to find.
+Find No. of subarray where sum <= k = n
+No. of subarray where sum <= (k-1) = y
+Ans = (n-y)
+
+Using pattern 2
+
+### 4. Shortest Minimum Window <condition>
+Shrink
+and tell valid ✓
+           ×
+### QUESTIONS
+
+1. Minimum points you can obtain from cards
+
+Initialize → left = 0, right = 0
+sum = 0, maxlen = 0
+
+func (nums, k) {
+
+    lsum = 0, Msum = 0, maxSum = 0
+
+    for (i = 0 → k-1)
+        lsum = lsum + nums[i]
+
+    maxSum = lsum
+
+    for (i = k-1; i > 0; i--) {
+
+        lsum = lsum - nums[i];
+        Msum = Msum + nums[rindex];
+        rindex = rindex - 1;
+
+        maxSum = max(maxSum, lsum + Msum);
+    }
+
+    return maxSum;
+}
+TC → O(2×K)
+SC → O(1)
 
 
 
