@@ -3621,3 +3621,22 @@ Example:
 * Idea: Store visited numbers in a map.
 
 ---
+
+# TWO POINTERS AND SLIDING WINDOW 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
